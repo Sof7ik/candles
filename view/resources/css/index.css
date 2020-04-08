@@ -1,0 +1,107 @@
+div.container
+{
+    width: 95%;
+    max-width: 1820px;
+
+    margin: 0 auto;
+}
+
+div.main-up-content
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.main-up-content.left, div.main-up-content.right
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin-top: 20px;
+}
+
+div.main-up-content.left h2, div.main-up-content.right h2
+{
+    color: #fff;
+    letter-spacing: 3px;
+
+    font-size: 30px;
+    font-weight: normal;
+    width: 100%;
+    text-align: left;
+
+    margin-bottom: 15px;
+}
+
+div.candles
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.candles__candle 
+{
+    width: 200px;
+    height: 200px;
+
+    background-image: url('../img/pics/1.png');
+    background-size: contain;
+    background-position: center center;
+
+    margin-right: 20px;
+
+    border-radius: 15px;
+
+    position: relative;
+    transition: all .3s;
+
+    box-shadow: 0px 0px 20px 1px #000;
+}
+
+div.candles__candle::before
+{
+    content: '';
+
+    position: absolute;
+
+    top: -10px;
+    left: -10px;
+
+    width: 100px;
+    height: 100px;
+
+    background-size: contain;
+    transition: all .3s;
+}
+
+div.candles__candle:hover::before
+{
+    transform: scale(1.02);
+}
+
+div.candles__candle:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px 1px #000;
+}
+
+div.candles__candle.sale::before
+{
+    background-image: url('../img/pics/ribbon.png');
+}
+
+div.candles__candle.top::before
+{
+    background-image: url('../img/pics/ribbon-top.png');
+}
+
+div.candles div.candles__candle:last-child
+{
+    margin-right: 0px;
+}

@@ -6,68 +6,78 @@
     <title>Аромасвечи</title>
 
     <link rel="stylesheet" href="./view/resources/css/style.css">
+    <link rel="stylesheet" href="./view/resources/css/header.css">
+    <link rel="stylesheet" href="./view/resources/css/index.css">
+    <link rel="stylesheet" href="./view/resources/css/constructor.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="wrapper">
+      <header>
+          <nav>
+              <a href="#" class="nav-items">СТРАНИЦА</a>
+              <a href="#" class="nav-items">СТРАНИЦА</a>
+              <a href="#" class="nav-items">СТРАНИЦА</a>
+              <a href="#" class="nav-items">СТРАНИЦА</a>
+          </nav>
+          <button>Личный кабинет
+            <img src='./view/resources/img/icons/user.png'>
+          </button>
+      </header>
+      
+      <main>
+        <div class="container">
+          <div class="main-up-content">
+              <div class="main-up-content left">
+                  <h2>СВЕЧИ ПО АКЦИИ</h2>
+                  <div class="candles">
+                      <div class="candles__candle sale">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-        <div class="wrapper">
-            <header>
-                <nav>
-                    <a href="#" class="nav-items">СТРАНИЦА</a>
-                    <a href="#" class="nav-items">СТРАНИЦА</a>
-                    <a href="#" class="nav-items">СТРАНИЦА</a>
-                    <a href="#" class="nav-items">СТРАНИЦА</a>
-                </nav>
-                <button>Личный кабинет</button>
-            </header>
+                      <div class="candles__candle sale">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-            <main>
-                <div class="main-up-content">
-                    <div class="main-up-content left">
-                        <h2>СВЕЧИ ПО АКЦИИ</h2>
-                        <div class="candles">
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+                      <div class="candles__candle sale">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+                      <div class="candles__candle sale">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
+                  </div>
+              </div>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+              <div class="main-up-content right">
+                  <h2>ТОП СВЕЧКИ</h2>
+                  <div class="candles">
+                      <div class="candles__candle top">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
-                        </div>
-                    </div>
+                      <div class="candles__candle top">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-                    <div class="main-up-content left">
-                        <h2>ТОП СВЕЧЕЙ</h2>
-                        <div class="candles">
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+                      <div class="candles__candle top">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+                      <div class="candles__candle top">
+                        <a href="#" class="candle__src"></a>  
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
+          <!-- <iframe src="./view/constructor.html"></iframe> -->
+          <?include './view/constructor.html'?>
 
-                            <div class="candles__candle">
-                              <a href="#" class="candle__src"></a>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
         </div>
-
+      </main>
     </div>
 </body>
 </html>
