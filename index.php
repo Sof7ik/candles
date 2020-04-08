@@ -21,9 +21,18 @@
               <a href="#" class="nav-items">СТРАНИЦА</a>
               <a href="#" class="nav-items">СТРАНИЦА</a>
               <a href="#" class="nav-items">СТРАНИЦА</a>
-              <button>Личный кабинет
-                <img src='./view/resources/img/icons/user.png'>
-              </button>
+              <div class="login-window">
+                <button>Личный кабинет
+                  <img src="./view/resources/img/icons/user.png">
+                </button>
+                <div class="modal-window">
+                  <form method="POST" action="./controller/php/auth.php">
+                    <input type="text" placeholder="Введите Логин" id="loginAuthU" class="" name="loginAuthU" required autofocus>
+                    <input type="password" placeholder="Введите Пароль" id="passwordAuthU" name="passwordAuthU" required>
+                    <input type="submit" value="Войти" id="buttonAuth" name="buttonAuth">
+                  </form>
+                </div>
+              </div>
           </nav>
           
       </header>
@@ -80,5 +89,6 @@
         </div>
       </main>
     </div>
+    <script src="./controller/js/main.js"></script>
 </body>
 </html>

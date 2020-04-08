@@ -9,10 +9,3 @@
     <input type='tel' placeholder='Введите Телефон' id='telU' name='telU' required><br>
     <input type='submit' value='Отправить' id='button' name='button'>
 </form>
-<!-- Форма авторизации -->
-<form method='POST' action=''>
-    <input type='text' placeholder='Введите Логин' id='loginAuthU' name='loginAuthU' required autofocus><br>
-    <input type='password' placeholder='Введите Пароль' id='passwordAuthU' name='passwordAuthU' required><br>
-    <input type='password' placeholder='Повторно введите Пароль' id='repeatPasswordAuthU' name='repeatPasswordAuthU' required><br>
-    <input type='submit' value='Войти' id='buttonAuth' name='buttonAuth'>
-</form>
