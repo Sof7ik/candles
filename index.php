@@ -21,10 +21,11 @@
               <a href="#" class="nav-items">СТРАНИЦА</a>
               <a href="#" class="nav-items">СТРАНИЦА</a>
               <a href="#" class="nav-items">СТРАНИЦА</a>
+              <button>Личный кабинет
+                <img src='./view/resources/img/icons/user.png'>
+              </button>
           </nav>
-          <button>Личный кабинет
-            <img src='./view/resources/img/icons/user.png'>
-          </button>
+          
       </header>
       
       <main>

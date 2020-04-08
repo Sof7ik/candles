@@ -1,32 +1,10 @@
 div.wrapper
 {
     width: 100%;
-    height: 100vh;
-
-    position: relative;
-
-    background-image: url('../img/pics/bg.png');
-    background-position: center center;
-    background-size: cover;
-
-    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-div.wrapper::before
-{
-    content: '';
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-
-    background-color: rgba(94, 94, 94, 0.7);
-    background-attachment: fixed;
-}
-
-div.wrapper *:not(header)
+div.wrapper *
 {
     position: relative;
     z-index: 2;
@@ -45,6 +23,22 @@ header
     /* position: fixed; */
 
     /* width: 100%; */
+}
+
+nav
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    padding: 0 50px;
+}
+
+header nav button
+{
+    margin-left: auto;
 }
 
 nav a
