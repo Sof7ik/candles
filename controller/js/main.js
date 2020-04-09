@@ -19,6 +19,15 @@ document.querySelector('#select-candle-color').addEventListener('input', (e) => 
 document.querySelectorAll('.candles__candle').forEach((e) => {
     e.addEventListener('click', (event) => {
         // console.log(event.target);
-        document.querySelector('div.leftModal').style.width = '500px';
+        document.querySelector('div.leftModal').style.width = '100px';
+        document.querySelector('div.leftModal *').style.display = "block";
+        document.querySelector('div.leftModal .modal-title *').style.display = "block";
+        
+        document.querySelector('div.leftModal .modal-title p').addEventListener('click', ()=>
+        {
+            document.querySelector('div.leftModal').style.width = '0px';
+            document.querySelector('div.leftModal *').style.display = "none";
+        document.querySelector('div.leftModal .modal-title *').style.display = "none";
+        })
     })
 })
