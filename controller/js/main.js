@@ -15,3 +15,10 @@ function showAndHide(){
 document.querySelector('#select-candle-color').addEventListener('input', (e) => {
     document.querySelector('label.color-var.user').style.background = e.target.value;
 })
+
+document.querySelectorAll('.candles__candle').forEach((e) => {
+    e.addEventListener('click', (event) => {
+        // console.log(event.target);
+        document.querySelector('div.leftModal').style.width = '500px';
+    })
+})

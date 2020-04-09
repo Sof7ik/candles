@@ -104,3 +104,14 @@ button img
 {
     margin-left: 10px;
 }
+
+div.leftModal  
+{
+    min-width: 0px;
+    height: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: chartreuse;
+    z-index: 5;
+}

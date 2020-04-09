@@ -15,6 +15,7 @@
 </head>
 <body>
     <div class="wrapper">
+      <div class='leftModal'></div>
       <header>
           <nav>
               <a href="#" class="nav-items">СТРАНИЦА</a>
