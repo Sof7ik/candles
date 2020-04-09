@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 09 2020 г., 00:02
+-- Время создания: Апр 09 2020 г., 14:52
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -44,7 +44,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `login`, `name`, `surname`, `password`, `email`, `phone`) VALUES
 (1, 'userLogin1', 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
-(2, 'userLogin2', 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789');
+(2, 'userLogin2', 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
+(3, '123', '123', '123', '123', '123@123', '123456789');
 
 --
 -- Индексы сохранённых таблиц
@@ -64,7 +65,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
