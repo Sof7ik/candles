@@ -1,5 +1,5 @@
 let check = 0;
-document.querySelector('div.login-window').addEventListener('click', showAndHide);
+document.querySelector('div.login-window button').addEventListener('click', showAndHide);
 
 function showAndHide(){
     if(!check){
