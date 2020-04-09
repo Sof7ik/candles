@@ -1,0 +1,17 @@
+div.leftModal  
+{
+    width: 0px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: chartreuse;
+    z-index: 5;
+
+    transition: width .4s;
+}
+
+div.leftModal *
+{
+    display: none;
+}

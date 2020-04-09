@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="./view/resources/css/header.css">
     <link rel="stylesheet" href="./view/resources/css/index.css">
     <link rel="stylesheet" href="./view/resources/css/constructor.css">
+    <link rel="stylesheet" href="./view/resources/css/leftModalWindow.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
-      <div class='leftModal'></div>
+      <?php include './model/modalWindow.html'?>
       <header>
           <nav>
               <a href="#" class="nav-items">СТРАНИЦА</a>
@@ -85,10 +86,20 @@
           </div>
 
           <!-- <iframe src="./view/constructor.html"></iframe> -->
-          <?include './view/constructor.html'?>
+          <?include './model/constructor.html'?>
+
+          <?include './model/constructor.html'?>
+
+          <?include './model/constructor.html'?>
 
         </div>
       </main>
+
+      <footer>
+
+        <span></span>
+
+      </footer>
     </div>
     <script src="./controller/js/main.js"></script>
 </body>
