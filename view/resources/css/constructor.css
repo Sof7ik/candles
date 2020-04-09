@@ -76,12 +76,6 @@ div.params div.candle-select:first-child
     margin-top: 0px;
 }
 
-div.candle-select h3
-{
-    /* width: 100%; */
-    /* text-align: left; */
-}
-
 div.type__vars, div.shape__vars, div.color__vars
 {
     display: flex;
@@ -91,18 +85,35 @@ div.type__vars, div.shape__vars, div.color__vars
     margin-top: 10px;
 }
 
-div.type__vars button
+p.type-var
+{
+    font-size: 17px;
+    line-height: 20px;
+    font-style: normal;
+
+    padding: 7px 20px;
+
+    background: #C4C4C4;
+    border-radius: 25px;
+}
+
+label.type__vars__label
 {
     margin-right: 10px;
 }
 
-div.type__vars button:last-child
+label.type__vars button
+{
+    margin-right: 10px;
+}
+
+label.type__vars button:last-child
 {
     margin-right: 0px;
 }
 
 /* ТИПЫ СВЕЧ */
-div.shape-var
+label.shape-var
 {
     min-width: 120px;
     min-height: 140px;
@@ -113,24 +124,24 @@ div.shape-var
     margin-right: 20px;
 }
 
-div.shape-var.tall
+label.shape-var.tall
 {
     background-image: url('../img/pics/4.png');
 }
 
-div.shape-var.circle
+label.shape-var.circle
 {
     background-image: url('../img/pics/3.png');
 }
 
-div.shape-var.rectangle
+label.shape-var.rectangle
 {
     background-image: url('../img/pics/5.png');
 }
 
 /* ЦВЕТА СВЕЧ */
 
-div.color-var
+label.color-var
 {
     width: 40px;
     height: 40px;
@@ -140,17 +151,17 @@ div.color-var
     margin-right: 20px;
 }
 
-div.color-var.red
+label.color-var.red
 {
     background-color: red;
 }
 
-div.color-var.green
+label.color-var.green
 {
     background-color: rgb(53, 221, 53);
 }
 
-div.color-var.blue
+label.color-var.blue
 {
     background-color: blue;
 }

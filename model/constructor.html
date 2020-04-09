@@ -1,0 +1,81 @@
+<div class="constructor-wrapper">
+    <h2>КОНСТРУКТОР</h2>
+    <form action="../controller/php/buy.php" method="POST">
+
+        <div class="inner-constructor-wrapper">
+
+            <div class="image-and-buttons">
+                <div class="image"></div>
+
+                <div class="buttons">
+                    <input type="submit" name="submit-btn" value="КУПИТЬ">
+                    <button>В КОРЗИНУ</button>
+                </div>
+            </div>
+
+            <div class="params">
+
+                <div class="candle-type-select candle-select">
+                    <h3>Тип</h3>
+                    <div class="type__vars">
+                        <input type="radio" name="type__vars" id="vars__opened" value="Открытая свеча(не в стакане)" required>
+                        <label for="vars__opened" class="type__vars__label">
+                            <p class="type-var">Открытая</p>
+                        </label>
+                        
+                        <input type="radio" name="type__vars" id="vars__glassed" value="Свеча в стакане" required>
+                        <label for="vars__glassed" class="type__vars__label">
+                            <p class="type-var">В стакане</p>
+                        </label>
+                        
+                    </div>
+                </div>
+
+                <div class="candle-shape-select candle-select">
+                    <h3>Форма</h3>
+                    <div class="shape__vars">
+                        <input type="radio" name="shape__vars" id="vars__tall" value="Длинная" required>
+
+                        <label for="vars__tall" class="shape-var tall"></label>
+
+                        <input type="radio" name="shape__vars" id="vars__circle" value="С закругленным низом" required>
+
+                        <label for="vars__circle" class="shape-var circle"></label>
+
+                        <input type="radio" name="shape__vars" id="vars__rectangle" value="Прямоугольная" required>
+
+                        <label for="vars__rectangle" class="shape-var rectangle"></label>
+
+                    </div>
+                </div>
+
+                <div class="candle-color-select candle-select">
+                    <h3>Цвет</h3>
+                    <div class="color__vars">
+                        <input type="radio" name="color__vars" id="vars__red" value="Красная" required>
+                        <label for="vars__red" class="color-var red"></label>
+
+                        <input type="radio" name="color__vars" id="vars__green" value="Зеленая" required>
+                        <label for="vars__green" class="color-var green"></label>
+
+                        <input type="radio" name="color__vars" id="vars__blue" value="Синяя" required>
+                        <label for="vars__blue" class="color-var blue"></label>
+
+                        <input type="radio" name="color__vars" id="vars__user" value="Юзерная" required>
+                        <label for="vars__user">
+                            user
+                        </label>
+
+                        <input type="color" name="user-color" id="select-candle-color" value="#ff0000">
+                            <label for="select-candle-color" class="color-var user"></label>
+
+                        <!-- <div class="color-var user"></div> -->
+                    </div>
+                </div> 
+                
+            </div>
+
+        </div>
+
+    </form>
+</div>
