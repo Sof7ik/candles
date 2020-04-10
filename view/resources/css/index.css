@@ -24,19 +24,6 @@ div.main-up-content.left, div.main-up-content.right
     margin-top: 20px;
 }
 
-div.main-up-content.left h2, div.main-up-content.right h2
-{
-    color: #fff;
-    letter-spacing: 3px;
-
-    font-size: 30px;
-    font-weight: normal;
-    width: 100%;
-    text-align: left;
-
-    margin-bottom: 15px;
-}
-
 div.candles
 {
     display: flex;
@@ -105,4 +92,17 @@ div.candles__candle.top::before
 div.candles div.candles__candle:last-child
 {
     margin-right: 0px;
+}
+
+a.topAndSale
+{
+    color: #fff;
+    letter-spacing: 3px;
+
+    font-size: 30px;
+    font-weight: normal;
+    width: 100%;
+    text-align: left;
+
+    margin-bottom: 15px;
 }
