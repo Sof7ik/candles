@@ -1,0 +1,35 @@
+div.login-window
+{
+    margin-left: auto;
+    position: relative;
+}
+
+div.modal-window
+{
+    border: 1px solid blueviolet;
+    background: rgb(149, 56, 236);
+    padding: 10px;
+    position: absolute;
+    top: -150px;
+    transition: all .3s;
+
+    border-radius: 10px;
+}
+
+div.modal-window form
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+input.login-input
+{
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    margin-top: 6px;
+}

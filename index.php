@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./view/resources/css/style.css">
     <link rel="stylesheet" href="./view/resources/css/header.css">
+    <link rel="stylesheet" href="./view/resources/css/loginModalWindow.css">
     <link rel="stylesheet" href="./view/resources/css/index.css">
     <link rel="stylesheet" href="./view/resources/css/constructor.css">
     <link rel="stylesheet" href="./view/resources/css/leftModalWindow.css">
@@ -29,8 +30,8 @@
                 </button>
                 <div class="modal-window">
                   <form method="POST" action="./controller/php/auth.php">
-                    <input type="text" placeholder="Введите Логин" id="loginAuthU" class="" name="loginAuthU" required autofocus>
-                    <input type="password" placeholder="Введите Пароль" id="passwordAuthU" name="passwordAuthU" required>
+                    <input type="text" placeholder="Введите Логин" id="loginAuthU" class="login-input" name="loginAuthU" required autofocus>
+                    <input type="password" placeholder="Введите Пароль" id="passwordAuthU" class="login-input" name="passwordAuthU" required>
                     <input type="submit" value="Войти" id="buttonAuth" name="buttonAuth">
                   </form>
                 </div>
@@ -86,10 +87,6 @@
           </div>
 
           <!-- <iframe src="./view/constructor.html"></iframe> -->
-          <?include './model/constructor.html'?>
-
-          <?include './model/constructor.html'?>
-
           <?include './model/constructor.html'?>
 
         </div>

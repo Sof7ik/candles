@@ -36,40 +36,7 @@ nav
     padding: 0 50px;
 }
 
-div.login-window
-{
-    margin-left: auto;
-    position: relative;
-}
 
-div.modal-window
-{
-    border: 1px solid blueviolet;
-    background: rgb(149, 56, 236);
-    padding: 10px;
-    position: absolute;
-    top: -150px;
-    transition: all .3s;
-}
-
-div.modal-window form
-{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-div.modal-window form input
-{
-    font-size: 16px;
-}
-
-div.modal-window form input[type="password"],
-div.modal-window form input[type="submit"]
-{
-    margin-top: 6px;
-}
 
 nav a
 {
