@@ -9,12 +9,14 @@ div.container
 div.main-wrapper
 {
     width: 100%;
-    height: calc(100vh - 40px);
+    min-height: 100vh;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+
+    /* padding: 110px 0px; */
 }
 
 div.main-wrapper > h1
@@ -24,13 +26,14 @@ div.main-wrapper > h1
     text-align: center;
 
     font-size: 50px;
+    margin-top: 100px;
 }
 
 div.main-up-content
 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     width: 100%;
@@ -71,8 +74,8 @@ div.candles
 
 div.candles__candle 
 {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
 
     background-image: url('../img/pics/1.png');
     background-size: contain;
@@ -145,4 +148,14 @@ div.constructor-source h2
 {
     color: #fff;
     font-size: 35px;
+}
+
+div.outer-constructor-wrapper
+{
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
 }

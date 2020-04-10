@@ -1,0 +1,11 @@
+div.constructor-wrapper.mini
+{
+    background-color: #c4c4c4;
+    padding: 15px;
+}
+
+div.inner-constructor-wrapper.mini div.image
+{
+    width: 140px;
+    height: 140px;
+}

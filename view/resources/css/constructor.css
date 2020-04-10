@@ -97,17 +97,17 @@ p.type-var
     border-radius: 25px;
 }
 
-label.type__vars__label
+label.type__vars__label, div.type__vars__label
 {
     margin-right: 10px;
 }
 
-label.type__vars button
+label.type__vars button, div.type__vars button
 {
     margin-right: 10px;
 }
 
-label.type__vars button:last-child
+label.type__vars button:last-child, div.type__vars button
 {
     margin-right: 0px;
 }
@@ -124,24 +124,44 @@ label.shape-var
     margin-right: 20px;
 }
 
-label.shape-var.tall
+div.shape__vars label.shape-var:last-child,
+div.shape__vars div.shape-var:last-child
+{
+    margin-right: 0px;
+}
+
+div.shape-var
+{
+    max-width: 100px;
+    max-height: 80px;
+
+    min-width: 100px;
+    min-height: 80px;
+
+    background-size: contain;
+    background-position: center center;
+
+    margin-right: 20px;
+}
+
+label.shape-var.tall, div.shape-var.tall
 {
     background-image: url('../img/pics/4.png');
 }
 
-label.shape-var.circle
+label.shape-var.circle, div.shape-var.circle
 {
     background-image: url('../img/pics/3.png');
 }
 
-label.shape-var.rectangle
+label.shape-var.rectangle, div.shape-var.rectangle
 {
     background-image: url('../img/pics/5.png');
 }
 
 /* ЦВЕТА СВЕЧ */
 
-label.color-var
+label.color-var, div.color-var
 {
     width: 40px;
     height: 40px;
@@ -151,27 +171,37 @@ label.color-var
     margin-right: 20px;
 }
 
-label.color-var.red
+label.color-var.red, div.color-var.red
 {
     background-color: red;
 }
 
-label.color-var.green
+label.color-var.green, div.color-var.green
 {
     background-color: rgb(53, 221, 53);
 }
 
-label.color-var.blue
+label.color-var.blue, div.color-var.blue
 {
     background-color: blue;
 }
 
-input[type="color"]
+input[type="color"], input[type="radio"]
 {
     display: none;
 }
 
-label.color-var.user
+input[type="radio"] + label
+{
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+input[type="radio"]:checked + label
+{
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+label.color-var.user, div.color-var.user
 {
     background-color: #fff;
     background-image: url('../img/icons/plus.png');

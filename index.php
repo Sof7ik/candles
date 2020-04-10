@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="./view/resources/css/header.css">
     <link rel="stylesheet" href="./view/resources/css/loginModalWindow.css">
     <link rel="stylesheet" href="./view/resources/css/index.css">
+
+    <!-- Constructors -->
     <link rel="stylesheet" href="./view/resources/css/constructor.css">
+    <link rel="stylesheet" href="./view/resources/css/mini-constructor.css">
+
     <link rel="stylesheet" href="./view/resources/css/leftModalWindow.css">
 
     <!-- Fonts -->
@@ -18,7 +22,7 @@
 <body>
     <div class="wrapper">
       <?php include './model/modalWindow.html'?>
-      <header>
+      <header style="position: fixed;">
           <nav>
               <a href="#" class="nav-items">ГЛАВНАЯ</a>
               <a href="#inner-constructor-wrapper" class="nav-items">КОНСТРУКТОР</a>
@@ -47,6 +51,7 @@
         <div class="container">
 
           <div class="main-wrapper">
+            <!--  -->
             <h1>ДЕВОЧКА-СОСОЧКА, <br>СВЕЧКА ТЕБЕ!</h1>
 
             <div class="main-up-content">
@@ -94,14 +99,21 @@
             </div>
 
             <div class="constructor-source">
-              <h2>СОЗДАЙ СВОЮ СВЕЧУ!</h2>
+              <h2><a style="color: #fff;" href="#outer-constructor-wrapper">СОЗДАЙ СВОЮ СВЕЧУ!</a></h2>
 
-              <?include './model/constructor.html'?>
+                <?include './model/mini-constructor.html'?>
+              </a>
+
+              
             </div>
 
           </div>
 
-          <?include './model/constructor.html'?>
+          <div class="outer-constructor-wrapper" id="outer-constructor-wrapper">
+            <?include './model/constructor.html'?>
+          </div>
+
+          
 
         </div>
       </main>
