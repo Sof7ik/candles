@@ -13,6 +13,7 @@
             $query = mysqli_query($link, "INSERT INTO `users`
             (`id`, `login`, `name`, `surname`, `password`, `email`, `phone`)
             VALUES (NULL, '$login', '$name', '$surname', '$password', '$mail', '$phone')");
+            header('Location: ../../index.php');
         }
     }
 ?>
