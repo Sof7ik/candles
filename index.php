@@ -101,8 +101,6 @@
 
           </div>
 
-          <?include './model/constructor.html'?>
-
         </div>
       </main>
 
