@@ -6,8 +6,7 @@ div.login-window
 
 div.modal-window
 {
-    border: 1px solid blueviolet;
-    background: rgb(149, 56, 236);
+    background: rgb(158, 158, 158);
     padding: 10px;
     position: absolute;
     top: -150px;
@@ -28,8 +27,35 @@ input.login-input
 {
 
     border: none;
+    border-radius: 3px;
     outline: none;
 
     font-size: 16px;
-    margin-top: 6px;
+    margin: 5px 0px 10px 0px;
+    padding: 3px;
+}
+
+form div.regAndLog
+{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+form div.regAndLog input[type="submit"]
+{
+    cursor: pointer;
+}
+
+form div.regAndLog input[type="submit"],
+form div.regAndLog a
+{
+    background-color: rgb(207, 207, 207); 
+    border: none;
+    border-radius: 3px;
+
+    font-size: 15px;
+    padding: 3px;
+    margin: 0px;
 }
