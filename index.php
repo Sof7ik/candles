@@ -26,7 +26,7 @@
           <nav>
               <a href="#" class="nav-items">ГЛАВНАЯ</a>
               <a href="#inner-constructor-wrapper" class="nav-items">КОНСТРУКТОР</a>
-              <a href="#" class="nav-items">КАТАЛОГ </a>
+              <a href="./view/resources/catalog.php" class="nav-items">КАТАЛОГ </a>
               <a href="#" class="nav-items">СТРАНИЦА</a>
               <div class="login-window">
                 <button>Личный кабинет
@@ -56,7 +56,7 @@
 
             <div class="main-up-content">
               <div class="main-up-content left">
-                  <h2>СВЕЧИ ПО АКЦИИ</h2>
+                  <a href="./view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
                   <div class="candles">
                       <div class="candles__candle sale">
                         <a href="#" class="candle__src"></a>  
@@ -77,7 +77,7 @@
               </div>
 
               <div class="main-up-content right">
-                  <h2>ТОП СВЕЧКИ</h2>
+                  <a href="./view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a>
                   <div class="candles">
                       <div class="candles__candle top">
                         <a href="#" class="candle__src"></a>  
