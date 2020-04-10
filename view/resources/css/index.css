@@ -6,12 +6,34 @@ div.container
     margin: 0 auto;
 }
 
+div.main-wrapper
+{
+    width: 100%;
+    height: calc(100vh - 40px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.main-wrapper > h1
+{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+
+    font-size: 50px;
+}
+
 div.main-up-content
 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+
+    width: 100%;
 }
 
 div.main-up-content.left, div.main-up-content.right
@@ -22,6 +44,8 @@ div.main-up-content.left, div.main-up-content.right
     justify-content: flex-start;
 
     margin-top: 20px;
+
+    width: max-content;
 }
 
 div.candles
@@ -34,8 +58,8 @@ div.candles
 
 div.candles__candle 
 {
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
 
     background-image: url('../img/pics/1.png');
     background-size: contain;
@@ -94,6 +118,21 @@ div.candles div.candles__candle:last-child
     margin-right: 0px;
 }
 
+div.constructor-source
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+div.constructor-source h2
+{
+    color: #fff;
+    font-size: 35px;
+}
 a.topAndSale
 {
     color: #fff;

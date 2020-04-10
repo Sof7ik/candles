@@ -45,7 +45,11 @@
       
       <main>
         <div class="container">
-          <div class="main-up-content">
+
+          <div class="main-wrapper">
+            <h1>ДЕВОЧКА-СОСОЧКА, <br>СВЕЧКА ТЕБЕ!</h1>
+
+            <div class="main-up-content">
               <div class="main-up-content left">
                   <a href="./view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
                   <div class="candles">
@@ -87,9 +91,16 @@
                       </div>
                   </div>
               </div>
+            </div>
+
+            <div class="constructor-source">
+              <h2>СОЗДАЙ СВОЮ СВЕЧУ!</h2>
+
+              <?include './model/constructor.html'?>
+            </div>
+
           </div>
 
-          <!-- <iframe src="./view/constructor.html"></iframe> -->
           <?include './model/constructor.html'?>
 
         </div>
