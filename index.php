@@ -21,31 +21,8 @@
 </head>
 <body>
     <div class="wrapper">
-      <?php include './model/modalWindow.html'?>
-      <header style="position: fixed;">
-          <nav>
-              <a href="#" class="nav-items">ГЛАВНАЯ</a>
-              <a href="#inner-constructor-wrapper" class="nav-items">КОНСТРУКТОР</a>
-              <a href="./view/resources/catalog.php" class="nav-items">КАТАЛОГ </a>
-              <a href="#" class="nav-items">СТРАНИЦА</a>
-              <div class="login-window">
-                <button>Личный кабинет
-                  <img src="./view/resources/img/icons/user.png">
-                </button>
-                <div class="modal-window">
-                  <form method="POST" action="./controller/php/auth.php">
-                    <input type="text" placeholder="Введите Логин" id="loginAuthU" class="login-input" name="loginAuthU" required autofocus>
-                    <input type="password" placeholder="Введите Пароль" id="passwordAuthU" class="login-input" name="passwordAuthU" required>
-                    <div class='regAndLog'>
-                      <input type="submit" value="Войти" id="buttonAuth" name="buttonAuth">
-                      <a href="./view/resources/regPage.php">Регистрация</a>
-                    </div>
-                  </form>
-                </div>
-              </div>
-          </nav>
-          
-      </header>
+      <?php include './model/modalWindow.html'; ?>
+      <?php include './model/header.html'; ?>
       
       <main>
         <div class="container">
@@ -56,42 +33,44 @@
 
             <div class="main-up-content">
               <div class="main-up-content left">
-                  <a href="./view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
+                  <h1>
+                    <a href="./view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
+                  </h1>
                   <div class="candles">
-                      <div class="candles__candle sale">
+                      <div class="candles__candle sale" data-candlenumber = '1'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle sale">
+                      <div class="candles__candle sale" data-candlenumber = '2'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle sale">
+                      <div class="candles__candle sale" data-candlenumber = '3'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle sale">
+                      <div class="candles__candle sale" data-candlenumber = '4'>
                         <a href="#" class="candle__src"></a>  
                       </div>
                   </div>
               </div>
 
               <div class="main-up-content right">
-                  <a href="./view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a>
+                  <h1><a href="./view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
                   <div class="candles">
-                      <div class="candles__candle top">
+                      <div class="candles__candle top" data-candlenumber = '5'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle top">
+                      <div class="candles__candle top" data-candlenumber = '6'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle top">
+                      <div class="candles__candle top" data-candlenumber = '7'>
                         <a href="#" class="candle__src"></a>  
                       </div>
 
-                      <div class="candles__candle top">
+                      <div class="candles__candle top" data-candlenumber = '8'>
                         <a href="#" class="candle__src"></a>  
                       </div>
                   </div>

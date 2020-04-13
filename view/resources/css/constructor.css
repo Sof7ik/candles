@@ -1,3 +1,8 @@
+label
+{
+    transition: all .3s;
+}
+
 div.constructor-wrapper
 {
     display: flex;
@@ -90,16 +95,17 @@ p.type-var
     font-size: 17px;
     line-height: 20px;
     font-style: normal;
-
-    padding: 7px 20px;
-
-    background: #C4C4C4;
-    border-radius: 25px;
 }
 
 label.type__vars__label, div.type__vars__label
 {
     margin-right: 10px;
+    padding: 7px 20px;
+
+    background: #C4C4C4;
+    border-radius: 25px;
+
+    
 }
 
 label.type__vars button, div.type__vars button
@@ -161,7 +167,7 @@ label.shape-var.rectangle, div.shape-var.rectangle
 
 /* ЦВЕТА СВЕЧ */
 
-label.color-var, div.color-var
+label.color-var, div.color-var, label.color-var.input-label
 {
     width: 40px;
     height: 40px;
@@ -186,9 +192,20 @@ label.color-var.blue, div.color-var.blue
     background-color: blue;
 }
 
+label.color-var.input-label
+{
+    margin-right: 0px;
+    background-color: greenyellow;
+}
+
+input[type="radio"]#vars__user:checked + label + input + label
+{
+    display: block;
+}
+
 input[type="color"], input[type="radio"]
 {
-    display: none;
+    opacity: 0;
 }
 
 input[type="radio"] + label
@@ -199,6 +216,8 @@ input[type="radio"] + label
 input[type="radio"]:checked + label
 {
     border: 2px solid rgba(0, 0, 0, 1);
+
+    transform: scale(1.05);
 }
 
 label.color-var.user, div.color-var.user
@@ -212,4 +231,6 @@ label.color-var.user, div.color-var.user
     height: 40px;
 
     border-radius: 100%;
+
+    display: none;
 }

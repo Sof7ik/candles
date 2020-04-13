@@ -51,6 +51,11 @@ div.main-up-content.left, div.main-up-content.right
     width: max-content;
 }
 
+div.main-up-content.left h1, div.main-up-content.right h1
+{
+    margin-bottom: 15px;
+}
+
 div.candles
 {
     display: flex;
