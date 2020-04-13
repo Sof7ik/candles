@@ -33,7 +33,7 @@ div.image
     width: 350px;
     height: 350px;
     
-    background-image: url('../img/pics/1.png');
+    background-image: url('/view/resources/img/pics/1.png');
     background-size: contain;
 
     margin-top: 10px;
@@ -152,17 +152,17 @@ div.shape-var
 
 label.shape-var.tall, div.shape-var.tall
 {
-    background-image: url('../img/pics/4.png');
+    background-image: url('/view/resources/img/pics/4.png');
 }
 
 label.shape-var.circle, div.shape-var.circle
 {
-    background-image: url('../img/pics/3.png');
+    background-image: url('/view/resources/img/pics/3.png');
 }
 
 label.shape-var.rectangle, div.shape-var.rectangle
 {
-    background-image: url('../img/pics/5.png');
+    background-image: url('/view/resources/img/pics/5.png');
 }
 
 /* ЦВЕТА СВЕЧ */
@@ -223,7 +223,7 @@ input[type="radio"]:checked + label
 label.color-var.user, div.color-var.user
 {
     background-color: #fff;
-    background-image: url('../img/icons/plus.png');
+    background-image: url('/view/resources/img/icons/plus.png');
     background-position: center center;
     background-size: 65%;
 

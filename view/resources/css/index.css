@@ -1,11 +1,3 @@
-div.container
-{
-    width: 95%;
-    max-width: 1820px;
-
-    margin: 0 auto;
-}
-
 div.main-wrapper
 {
     width: 100%;
@@ -69,7 +61,7 @@ div.candles__candle
     width: 150px;
     height: 150px;
 
-    background-image: url('../img/pics/1.png');
+    background-image: url('/view/resources/img/pics/1.png');
     background-size: contain;
     background-position: center center;
 
@@ -113,12 +105,12 @@ div.candles__candle:hover
 
 div.candles__candle.sale::before
 {
-    background-image: url('../img/pics/ribbon.png');
+    background-image: url('/view/resources/img/pics/ibbon.png');
 }
 
 div.candles__candle.top::before
 {
-    background-image: url('../img/pics/ribbon-top.png');
+    background-image: url('/view/resources/img/pics/ribbon-top.png');
 }
 
 div.candles div.candles__candle:last-child

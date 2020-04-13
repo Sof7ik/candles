@@ -5,6 +5,9 @@
     font-family: Roboto;
     background-repeat: no-repeat;
     box-sizing: border-box;
+
+    /* position: relative;
+    z-index: 100; */
 }
 
 html
@@ -17,7 +20,7 @@ body
 {
     width: 100%;
     min-height: 100%;
-    background-image: url('../img/pics/bg.png');
+    background-image: url('/view/resources/img/pics/bg.png');
     background-position: center center;
     background-size: cover;
 
@@ -42,5 +45,12 @@ body::before
 a
 {
     text-decoration: none;
-    
+}
+
+div.container
+{
+    width: 95%;
+    max-width: 1820px;
+
+    margin: 0 auto;
 }

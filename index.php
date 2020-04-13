@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аромасвечи</title>
 
-    <link rel="stylesheet" href="./view/resources/css/style.css">
-    <link rel="stylesheet" href="./view/resources/css/header.css">
-    <link rel="stylesheet" href="./view/resources/css/loginModalWindow.css">
-    <link rel="stylesheet" href="./view/resources/css/index.css">
+    <link rel="stylesheet" href="/view/resources/css/style.css">
+    <link rel="stylesheet" href="/view/resources/css/header.css">
+    <link rel="stylesheet" href="/view/resources/css/loginModalWindow.css">
+    <link rel="stylesheet" href="/view/resources/css/index.css">
 
     <!-- Constructors -->
-    <link rel="stylesheet" href="./view/resources/css/constructor.css">
-    <link rel="stylesheet" href="./view/resources/css/mini-constructor.css">
+    <link rel="stylesheet" href="/view/resources/css/constructor.css">
+    <link rel="stylesheet" href="/view/resources/css/mini-constructor.css">
 
-    <link rel="stylesheet" href="./view/resources/css/leftModalWindow.css">
+    <link rel="stylesheet" href="/view/resources/css/leftModalWindow.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
-      <?php include './model/modalWindow.html'; ?>
-      <?php include './model/header.html'; ?>
+      <?php include './view/modalWindow.html'; ?>
+
+      <? include './view/header.html'; ?>
       
       <main>
         <div class="container">
@@ -34,7 +35,7 @@
             <div class="main-up-content">
               <div class="main-up-content left">
                   <h1>
-                    <a href="./view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
+                    <a href="/view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
                   </h1>
                   <div class="candles">
                       <div class="candles__candle sale" data-candlenumber = '1'>
@@ -56,7 +57,7 @@
               </div>
 
               <div class="main-up-content right">
-                  <h1><a href="./view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
+                  <h1><a href="/view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
                   <div class="candles">
                       <div class="candles__candle top" data-candlenumber = '5'>
                         <a href="#" class="candle__src"></a>  
@@ -80,7 +81,7 @@
             <div class="constructor-source">
               <h2><a style="color: #fff;" href="#outer-constructor-wrapper">СОЗДАЙ СВОЮ СВЕЧУ!</a></h2>
 
-                <?include './model/mini-constructor.html'?>
+                <?include './view/mini-constructor.html'?>
               </a>
 
               
@@ -89,7 +90,7 @@
           </div>
 
           <div class="outer-constructor-wrapper" id="outer-constructor-wrapper">
-            <?include './model/constructor.html'?>
+            <?include './view/constructor.html'?>
           </div>
 
           
@@ -103,6 +104,7 @@
 
       </footer>
     </div>
-    <script src="./controller/js/main.js"></script>
+    <script src="/controller/js/login-window.js"></script>
+    <script src="/controller/js/leftModalWindow.js"></script>
 </body>
 </html>

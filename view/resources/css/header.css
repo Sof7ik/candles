@@ -20,6 +20,7 @@ header
 
     padding: 20px 0px;
     z-index: 3;
+    position: relative;
     
 
     width: 100%;

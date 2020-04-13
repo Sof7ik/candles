@@ -3,16 +3,17 @@
     $buttonAuth = $_POST['buttonAuth'];
     if(isset($buttonAuth)){
         
-        $loginAuth = $_POST['loginAuthU'];
+        $emailAuth = $_POST['emailAuthU'];
         $passwordAuth = $_POST['passwordAuthU'];
-        $repeatPasswordAuth = $_POST['repeatPasswordAuthU'];
 
         $query = mysqli_query($link, 
         "SELECT * FROM `users`
-        WHERE `login` = '$loginAuth' AND `password` = '$passwordAuth'");
+        WHERE `email` = '$emailAuth' OR `phone` = '$emailAuth' AND `password` = '$passwordAuth'");
         $result = mysqli_fetch_assoc($query);
         if($result){
-            if($result['login'] == $loginAuth && $result['password'] == $passwordAuth){
+            if($result['email'] == $emailAuth || $result['phone'] == $emailAuth && $result['password'] == $passwordAuth){
+                $_SESSION['pass'] = $result['password'];
+                
                 header('Location: ../../index.php');
             }
         }
