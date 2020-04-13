@@ -14,5 +14,13 @@ form input
     text-indent: 10px;
     background-color: #000;
 
-    border: 
+    border: none;
+    outline: none;
+
+    color: #fff;
+}
+
+form input:not(input[type="submit"])
+{
+    width: 400px;
 }

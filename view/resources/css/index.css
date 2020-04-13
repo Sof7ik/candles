@@ -105,7 +105,7 @@ div.candles__candle:hover
 
 div.candles__candle.sale::before
 {
-    background-image: url('/view/resources/img/pics/ibbon.png');
+    background-image: url('/view/resources/img/pics/ribbon.png');
 }
 
 div.candles__candle.top::before

@@ -92,9 +92,7 @@
           <div class="outer-constructor-wrapper" id="outer-constructor-wrapper">
             <?include './view/constructor.html'?>
           </div>
-
           
-
         </div>
       </main>
 
