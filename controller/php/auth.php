@@ -13,7 +13,7 @@
         $result = mysqli_fetch_assoc($query);
         if($result){
             if($result['login'] == $loginAuth && $result['password'] == $passwordAuth){
-                header('Location: ../../index.php');
+                header('Location: ../../view/resources/userPage.php');
             }
         }
         else {
