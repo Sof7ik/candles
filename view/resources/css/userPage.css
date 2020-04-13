@@ -1,0 +1,54 @@
+div.info
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding-top: 100px;
+    margin-left: 50px;
+    width: 40%;
+}
+div.photo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(151, 151, 151, 0.5);
+    border-radius: 30px;
+    width: 350px;
+    height: 350px;
+}
+
+div.photo > img
+{
+    width: 300px;
+    height: 300px;
+    border-radius: 200px;
+}
+
+ul.infoAboutUser
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+ul.infoAboutUser > li
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    list-style-type: none;
+    padding: 10px;
+}
+
+ul.infoAboutUser > li > span
+{
+    color: rgb(170, 170, 170);
+    font-size: 15px;
+}
+
+ul.infoAboutUser > li > p
+{
+    color: white;
+    font-size: 30px;
+}

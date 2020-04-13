@@ -14,7 +14,7 @@
             if($result['email'] == $emailAuth || $result['phone'] == $emailAuth && $result['password'] == $passwordAuth){
                 $_SESSION['pass'] = $result['password'];
                 
-                header('Location: ../../view/resources/userPage.php');
+                header('Location: /view/userPage.php');
             }
         }
         else {
