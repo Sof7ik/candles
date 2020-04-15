@@ -1,11 +1,27 @@
+div.main-wrapper
+{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+div.main-wrapper div.info
+{
+    margin-top: 100px;
+}
+
 div.info
 {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    padding-top: 100px;
-    margin-left: 50px;
-    width: 40%;
+    /* padding-top: 100px;
+    margin-left: 50px; */
+    /* width: 40%; */
 }
 div.photo
 {

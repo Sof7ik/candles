@@ -7,8 +7,6 @@ div.main-wrapper
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-
-    /* padding: 110px 0px; */
 }
 
 div.main-wrapper > h1
