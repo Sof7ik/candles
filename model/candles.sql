@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 10 2020 г., 14:21
--- Версия сервера: 8.0.15
--- Версия PHP: 7.3.9
+-- Время создания: Апр 15 2020 г., 12:35
+-- Версия сервера: 8.0.19
+-- Версия PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,13 +28,35 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `candles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `form_id` int(11) NOT NULL,
-  `color_id` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_id` int NOT NULL,
+  `form_id` int NOT NULL,
+  `color_id` int NOT NULL,
   `cost` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `candles`
+--
+
+INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) VALUES
+(1, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(2, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(3, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(4, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(5, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(6, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(7, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(8, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(9, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(10, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(11, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(12, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(13, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(14, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(15, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(18, 'Юзерная свеча 1', 1, 3, 8, 1000);
 
 -- --------------------------------------------------------
 
@@ -44,10 +65,22 @@ CREATE TABLE `candles` (
 --
 
 CREATE TABLE `colors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hex` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hex` varchar(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `colors`
+--
+
+INSERT INTO `colors` (`id`, `name`, `hex`) VALUES
+(1, 'Красный', '#ff0000'),
+(2, 'Зеленый', '#00ff44'),
+(3, 'Синий', '#0044ff'),
+(4, '', '#0ff06f'),
+(5, '', '#b89e47'),
+(8, '', '#11eea6');
 
 -- --------------------------------------------------------
 
@@ -56,10 +89,19 @@ CREATE TABLE `colors` (
 --
 
 CREATE TABLE `forms` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `forms`
+--
+
+INSERT INTO `forms` (`id`, `name`, `image`) VALUES
+(1, 'Длинная', ''),
+(2, 'С закругленным низом', ''),
+(3, 'Прямоугольная', '');
 
 -- --------------------------------------------------------
 
@@ -68,10 +110,18 @@ CREATE TABLE `forms` (
 --
 
 CREATE TABLE `types` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `types`
+--
+
+INSERT INTO `types` (`id`, `name`, `image`) VALUES
+(1, 'Открытая', ''),
+(2, 'В стакане', '');
 
 -- --------------------------------------------------------
 
@@ -80,8 +130,7 @@ CREATE TABLE `types` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `login` varchar(50) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
@@ -93,10 +142,10 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `name`, `surname`, `password`, `email`, `phone`) VALUES
-(1, 'userLogin1', 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
-(2, 'userLogin2', 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
-(8, 'leo_bychkov', 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543');
+INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES
+(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
+(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
+(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543');
 
 --
 -- Индексы сохранённых таблиц
@@ -143,31 +192,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
