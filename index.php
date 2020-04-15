@@ -90,7 +90,7 @@
           </div>
 
           <div class="outer-constructor-wrapper" id="outer-constructor-wrapper">
-            <?include './view/constructor.html'?>
+            <?include './view/constructor.php'?>
           </div>
           
         </div>
@@ -104,5 +104,6 @@
     </div>
     <script src="/controller/js/login-window.js"></script>
     <script src="/controller/js/leftModalWindow.js"></script>
+    <script src="/controller/js/constructor.js" defer></script>
 </body>
 </html>
