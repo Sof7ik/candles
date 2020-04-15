@@ -23,7 +23,7 @@
     <div class="wrapper">
       <?php include './view/modalWindow.html'; ?>
 
-      <? include './view/header.html'; ?>
+      <? include './view/header.php'; ?>
       
       <main>
         <div class="container">

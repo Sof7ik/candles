@@ -11,14 +11,46 @@
         WHERE `email` = '$emailAuth' OR `phone` = '$emailAuth' AND `password` = '$passwordAuth'");
         $result = mysqli_fetch_assoc($query);
         if($result){
-            if($result['email'] == $emailAuth || $result['phone'] == $emailAuth && $result['password'] == $passwordAuth){
-                $_SESSION['pass'] = $result['password'];
+            if (isset($_COOKIE['userInfo']))
+            {
+                setcookie(
+                    'userInfo',
+                    '',
+                    time()-3600,
+                    '/'
+                );
+
+                $cookieName = 'userInfo';
+                $cookieValue= serialize($getNewUserResult);
+                $expire = time()+604800;
+                $path = '/';
                 
-                header('Location: /view/userPage.php');
+                setcookie(
+                    $cookieName,
+                    $cookieValue,
+                    $expire,
+                    $path
+                );
+
+                header('Location: ../../index.php');
+            }
+            else{
+                $cookieName = 'userInfo';
+                $cookieValue= serialize($getNewUserResult);
+                $expire = time()+604800;
+                $path = '/';
+                
+                setcookie(
+                    $cookieName,
+                    $cookieValue,
+                    $expire,
+                    $path
+                );
+
+                header('Location: ../../index.php');
             }
         }
         else {
             echo 'Еггог';
         }
-    }
 ?>

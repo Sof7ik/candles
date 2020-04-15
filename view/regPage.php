@@ -16,7 +16,7 @@
 <body>
 
     <div class="wrapper">
-        <?php include './header.html'; ?>
+        <?php include './header.php'; ?>
 
         <main>
 
