@@ -9,9 +9,38 @@ div.main-wrapper
     align-items: flex-start;
 }
 
-div.main-wrapper div.info
+div.main-wrapper div.sub-nav
 {
     margin-top: 100px;
+}
+
+button.edit-prof
+{
+    background-color: #fff;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 500;
+
+    padding-left: 30px;
+}
+
+button.edit-prof::before
+{
+    content: '';
+
+    position: absolute;
+    left: 5px;
+    top: 0;
+
+    height: 100%;
+    width: 20px;
+
+    background-image: url('../img/icons/edit.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
 }
 
 div.info
@@ -19,10 +48,9 @@ div.info
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    /* padding-top: 100px;
-    margin-left: 50px; */
-    /* width: 40%; */
+    justify-content: center;
 }
+
 div.photo
 {
     display: flex;
@@ -67,4 +95,23 @@ ul.infoAboutUser > li > p
 {
     color: white;
     font-size: 30px;
+}
+
+input.edit-input
+{
+    color: white;
+    font-size: 20px; 
+
+    padding: 5px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    outline: none;
+
+    border: 2px solid black;
+    border-radius: 0.3rem;
+
+    text-indent: 10px;
+
+    width: 400px;
 }
