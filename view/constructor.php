@@ -9,8 +9,8 @@
                 <div class="image"></div>
 
                 <div class="buttons">
-                    <input type="submit" name="submit-btn" value="КУПИТЬ">
-                    <button>В КОРЗИНУ</button>
+                    <input type="submit" name="submit-btn" value="КУПИТЬ" class="buy-button">
+                    <button class="buy-button">В КОРЗИНУ</button>
                 </div>
             </div>
 

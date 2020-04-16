@@ -56,14 +56,43 @@ div.buttons
     margin-top: 20px;  
 }
 
-div.buttons button
+.buy-button
 {
+    position: relative;
+    outline: none;
+    border: none;
+
+    font-size: 17px;
+    line-height: 20px;
+    font-style: normal;
+
+    padding: 15px 20px;
+
+    background: #C4C4C4;
+    border-radius: 0.3rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
     transition: all .2s;
 }
 
-div.buttons button:hover
+.buy-button:hover
 {
     transform: scale(1.05);
+}
+
+div.buttons .buy-button:first-child:hover
+{
+    background-color: greenyellow;
+}
+
+div.buttons .buy-button:nth-child(2):hover
+{
+    background-color: rgb(217, 255, 1);
 }
 
 div.params
