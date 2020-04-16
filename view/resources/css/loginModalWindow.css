@@ -9,10 +9,11 @@ div.modal-window
     background: rgb(158, 158, 158);
     padding: 10px;
     position: absolute;
-    top: -150px;
+    top: -400px;
     transition: all .3s;
 
     border-radius: 10px;
+    margin-left: auto;
 }
 
 div.modal-window form
@@ -58,4 +59,32 @@ form div.regAndLog a
     font-size: 15px;
     padding: 3px;
     margin: 0px;
+}
+
+ul.login-modal-authtorized li
+{
+    margin-bottom: 10px;
+
+    background-color: rgba(236, 236, 236, 0.877);
+    border-radius: 0.3rem;
+    padding: 5px;
+
+    transition: all .3s;
+}
+
+ul.login-modal-authtorized li:last-child
+{
+    margin-bottom: 0px; 
+}
+
+ul.login-modal-authtorized li a
+{
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+ul.login-modal-authtorized li:hover
+{
+    transform: scale(1.03);
 }

@@ -6,7 +6,7 @@
 
         <a href="/view/catalog.php" class="nav-items">КАТАЛОГ </a>
 
-        <a href="/view/userPage.php" class="nav-items">Личный кабинет</a>
+        <a href="/view/userPage.php" class="nav-items">СТРАНИЦА</a>
 
         <div class="login-window">
 
@@ -32,9 +32,10 @@
                     else
                     {
                         ?>
-                            <ul>
-                                <li>Профиль</li>
-                                <li>Заказы</li>
+                            <ul class="login-modal-authtorized">
+                                <li><a href="/view/userPage.php">Профиль</a></li>
+                                <li><a href="#">Заказы</a></li>
+                                <li><a href="/controller/php/logout.php">Выйти</a></li>
                             </ul>
                         <?
                     }

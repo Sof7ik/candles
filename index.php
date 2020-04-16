@@ -35,7 +35,7 @@
             <div class="main-up-content">
               <div class="main-up-content left">
                   <h1>
-                    <a href="/view/resources/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
+                    <a href="/view/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
                   </h1>
                   <div class="candles">
                       <div class="candles__candle sale" data-candlenumber = '1'>
@@ -57,7 +57,7 @@
               </div>
 
               <div class="main-up-content right">
-                  <h1><a href="/view/resources/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
+                  <h1><a href="/view/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
                   <div class="candles">
                       <div class="candles__candle top" data-candlenumber = '5'>
                         <a href="#" class="candle__src"></a>  
