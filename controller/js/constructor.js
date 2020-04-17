@@ -5,9 +5,11 @@ document.querySelector('#select-candle-color').addEventListener('input', (e) => 
 })
 
 inputQuantity.addEventListener('input', ()=> {
-    if(inputQuantity.value < 1)
-    alert(`Ебанат нахуй, отъебись со своим ТО, да?
-А, и еще
-Как ты можешь меньше 1 свечки заказать?`);
-    inputQuantity.value = 1;
+    if(inputQuantity.value < 1){
+        // alert(`Ебанат нахуй, отъебись со своим ТО, да?
+        // А, и еще
+        // Как ты можешь меньше 1 свечки заказать?`);
+        inputQuantity.value = 1;
+    }
+    
 })

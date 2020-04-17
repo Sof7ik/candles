@@ -14,10 +14,10 @@ document.querySelectorAll('.candles__candle').forEach((e) => {
         // number2 = event.target.dataset.candlenumber;
         // console.log('number2: ', number2);
 
-        // if(number1 == number2)
-        // {
-        //     console.log("совпадают");
-        // }
+        if(number1 == number2)
+        {
+            console.log("совпадают");
+        }
 
         if(document.querySelector('div.leftModal').style.width != "100px")
         {
