@@ -95,6 +95,11 @@ ul.infoAboutUser > li > p
 {
     color: white;
     font-size: 30px;
+
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(170, 170, 170);
+    min-width: 400px;
+    max-width: 600px;
 }
 
 input.edit-input

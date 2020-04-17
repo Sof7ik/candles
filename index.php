@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аромасвечи</title>
 
-    <link rel="stylesheet" href="/view/resources/css/style.css">
-    <link rel="stylesheet" href="/view/resources/css/header.css">
-    <link rel="stylesheet" href="/view/resources/css/loginModalWindow.css">
-    <link rel="stylesheet" href="/view/resources/css/index.css">
+    <link rel="stylesheet" href="view/resources/css/style.css">
+    <link rel="stylesheet" href="view/resources/css/header.css">
+    <link rel="stylesheet" href="view/resources/css/loginModalWindow.css">
+    <link rel="stylesheet" href="view/resources/css/index.css">
 
     <!-- Constructors -->
-    <link rel="stylesheet" href="/view/resources/css/constructor.css">
-    <link rel="stylesheet" href="/view/resources/css/mini-constructor.css">
+    <link rel="stylesheet" href="view/resources/css/constructor.css">
+    <link rel="stylesheet" href="view/resources/css/mini-constructor.css">
 
-    <link rel="stylesheet" href="/view/resources/css/leftModalWindow.css">
+    <link rel="stylesheet" href="view/resources/css/leftModalWindow.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
-      <?php include './view/modalWindow.html'; ?>
+      <?php include 'view/modalWindow.html'; ?>
 
-      <? include './view/header.php'; ?>
+      <? include __DIR__.'/view/header.php';
+      echo __DIR__.'/view/header.php'; ?>
       
       <main>
         <div class="container">

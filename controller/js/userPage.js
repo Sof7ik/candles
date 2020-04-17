@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     let elems = document.querySelectorAll('ul.infoAboutUser li p');
 
-    
     elems.forEach((element) => {
-        oldInfoArray.push(element.textContent);
+        oldInfoArray.push(element.textContent.trim());
     })
 
     console.log('infoArray: ', oldInfoArray);
