@@ -1,7 +1,6 @@
 div.main-wrapper
 {
     width: 100%;
-    min-height: 100vh;
 
     display: flex;
     flex-flow: column nowrap;
@@ -23,23 +22,83 @@ div.main-wrapper > span
 {
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-    grid-gap: 10px;
+    grid-gap: 10px 50px;
 
-    width: 1200px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .grid-element
 {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(37, 115, 126);
+    background-color: #c4c4c4;
 
-    /* margin-right: 10px;
-    margin-bottom: 10px; */
+    padding: 10px;
+
+    border-radius: 0.5rem;
+
+    min-width: 600px;
+}
+
+div.item
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+img.order-candle
+{
+    width: 90px;
+    border-radius: 0.3rem;
+}
+
+div.texts
+{
+    margin-left: 15px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+div.texts > p
+{
+    max-width: 450px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+span.item-price
+{
+    display: inline-block;
+    align-self: flex-end;
+}
+
+div.item-buttons
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.item-buttons button.item-buttons__buton:first-child
+{
+    margin-right: 15px;
+}
+
+button.item-buttons__buton
+{
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .grid-1
