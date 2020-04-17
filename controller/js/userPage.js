@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=> {
+    document.addEventListener('DOMContentLoaded', ()=> {
     let oldInfoArray = [],
     newInfoArray = [],
     flag = false;
@@ -9,13 +9,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
         oldInfoArray.push(element.textContent.trim());
     })
 
-    console.log('infoArray: ', oldInfoArray);
-
     document.querySelector('button.edit-prof').addEventListener('click', () => {
         if (flag == false)
         {
             flag = true;
-            console.log(flag);
 
             document.querySelector('button.edit-prof').textContent = "Сохранить";
 
@@ -66,17 +63,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
             document.querySelectorAll('ul.infoAboutUser li input').forEach ((elem) => {
                 newInfoArray.push(elem.value);
             })
-            console.log(newInfoArray);
 
             const getCookie = (name) => {
                 let matches = document.cookie.match(new RegExp(
                 "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-                ));
+                ));   
                 return matches ? decodeURIComponent(matches[1]) : undefined;
             }
 
             let newCookie = JSON.parse(getCookie('userInfo'));
             let change = JSON.parse(getCookie('userInfo'));
+            
+            console.log('change', change);
             console.log('newCookie: ', newCookie);
 
             console.log('change["id"]: ', change['id']);

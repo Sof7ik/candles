@@ -22,7 +22,7 @@
                 $checkUserResult = mysqli_num_rows($checkUser);
                 if($checkUserResult == 0)
                 {
-                    // echo "Надо бы юзера добвавить";
+                    // echo "Надо бы юзера добавить";
                     $newUser = mysqli_query($link, "INSERT INTO `users`
                     (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES 
                     (NULL, '$name', '$surname', '$password', '$mail', '$phone');");
