@@ -21,10 +21,9 @@
 </head>
 <body>
     <div class="wrapper">
-      <?php include 'view/modalWindow.html'; ?>
+      <?php include __DIR__.'/view/modalWindow.html'; ?>
 
-      <? include __DIR__.'/view/header.php';
-      echo __DIR__.'/view/header.php'; ?>
+      <?php include __DIR__.'/view/header.php';?>
       
       <main>
         <div class="container">
@@ -35,9 +34,9 @@
 
             <div class="main-up-content">
               <div class="main-up-content left">
-                  <h1>
+                  <span>
                     <a href="/view/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
-                  </h1>
+                  </span>
                   <div class="candles">
                       <div class="candles__candle sale" data-candlenumber = '1'>
                         <a href="#" class="candle__src"></a>  
@@ -58,7 +57,7 @@
               </div>
 
               <div class="main-up-content right">
-                  <h1><a href="/view/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></h1>
+                  <span><a href="/view/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></span>
                   <div class="candles">
                       <div class="candles__candle top" data-candlenumber = '5'>
                         <a href="#" class="candle__src"></a>  

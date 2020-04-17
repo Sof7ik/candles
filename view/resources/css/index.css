@@ -41,12 +41,12 @@ div.main-up-content.left, div.main-up-content.right
     width: max-content;
 }
 
-div.main-up-content.left h1
+div.main-up-content.left span
 {
     text-align: right;
 }
 
-div.main-up-content.left h1, div.main-up-content.right h1
+div.main-up-content.left span, div.main-up-content.right span
 {
     margin-bottom: 15px;
     width: 100%;
