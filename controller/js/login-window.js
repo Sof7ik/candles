@@ -7,7 +7,7 @@ function showAndHide(){
         check = 1;
     }
     else {
-        document.querySelector('div.modal-window').style.top = "-150px";
+        document.querySelector('div.modal-window').style.top = "-400px";
         check = 0;
     }
 }
