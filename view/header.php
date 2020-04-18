@@ -27,6 +27,7 @@
                                     <a href="../regPage.php">Регистрация</a>
                                 </div>
                             </form>
+                            <a href="../forgot.php" target="_blank" class="forgot">Забыли пароль?</a>
                         <?
                     }
                     else
