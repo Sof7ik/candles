@@ -1,112 +1,103 @@
 <?php
     require_once 'connection.php';
 
-    $button = $_POST['button'];
+    if (isset($_COOKIE['userInfo']))
+    {
+        header('Location: ../../index.php');
+    }
 
-    if(isset($button)){
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $password = $_POST['password'];
+    $repeatPassword = $_POST['repeatPassword'];
+    $mail = $_POST['email'];
+    $phone = $_POST['phone'];
 
-        $name = $_POST['nameU'];
-        $surname = $_POST['surnameU'];
-        $password = $_POST['passwordU'];
-        $repeatPassword = $_POST['repeatPasswordU'];
-        $mail = $_POST['emailU'];
-        $phone = $_POST['telU'];
+    // echo $password;
+    // echo "\n";
+    // echo $repeatPassword;
+    // echo "\n";
 
-        if($password == $repeatPassword){
-            $password = password_hash($password, PASSWORD_DEFAULT);
+    if($password == $repeatPassword)
+    {
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $checkUser = mysqli_query($link, "SELECT * FROM `users` WHERE `email` = '$mail';");
+        // echo "Надо бы юзера добавить";
+        $newUser = mysqli_query($link, "INSERT INTO `users`
+        (`id`, `name`, `surname`, `password`, `email`, `phone`, `address`) VALUES 
+        (NULL, '$name', '$surname', '$password', '$mail', '$phone', NULL)");
 
-            if ($checkUser)
-            {
-                $checkUserResult = mysqli_num_rows($checkUser);
-                if($checkUserResult == 0)
+        // echo "\n";
+        // echo "INSERT INTO `users`
+        // (`id`, `name`, `surname`, `password`, `email`, `phone`, `address`) VALUES 
+        // (NULL, '$name', '$surname', '$password', '$mail', '$phone', NULL)";
+
+        if ($newUser)
+        {
+            $getNewUser = mysqli_query($link, "SELECT * FROM `users` ORDER BY `id` DESC LIMIT 1;");
+            if($getNewUser)
+            {   
+                $getNewUserResult = mysqli_fetch_assoc($getNewUser);
+
+                // echo "<pre>";
+                //     print_r($getNewUserResult);
+                // echo "</pre>";
+                if (isset($_COOKIE['userInfo']))
                 {
-                    // echo "Надо бы юзера добавить";
-                    $newUser = mysqli_query($link, "INSERT INTO `users`
-                    (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES 
-                    (NULL, '$name', '$surname', '$password', '$mail', '$phone');");
+                    setcookie(
+                        'userInfo',
+                        '',
+                        time()-3600,
+                        '/'
+                    );
 
-                    if ($newUser)
-                    {
-                        $getNewUser = mysqli_query($link, "SELECT * FROM `users` ORDER BY `id` DESC LIMIT 1;");
-                        if($getNewUser)
-                        {   
-                            $getNewUserResult = mysqli_fetch_assoc($getNewUser);
-
-                            // echo "<pre>";
-                            //     print_r($getNewUserResult);
-                            // echo "</pre>";
-                            if (isset($_COOKIE['userInfo']))
-                            {
-                                setcookie(
-                                    'userInfo',
-                                    '',
-                                    time()-3600,
-                                    '/'
-                                );
-
-                                $cookieName = 'userInfo';
-                                $cookieValue= serialize($getNewUserResult);
-                                $expire = time()+604800;
-                                $path = '/';
-                                
-                                setcookie(
-                                    $cookieName,
-                                    $cookieValue,
-                                    $expire,
-                                    $path
-                                );
-
-                                header('Location: ../../index.php');
-                            }
-                            else{
-                                $cookieName = 'userInfo';
-                                $cookieValue= serialize($getNewUserResult);
-                                $expire = time()+604800;
-                                $path = '/';
-                                
-                                setcookie(
-                                    $cookieName,
-                                    $cookieValue,
-                                    $expire,
-                                    $path
-                                );
-
-                                header('Location: ../../index.php');
-                            }
-                        }
-                        else
-                        {
-                            die(mysqli_error($getNewUser));
-                        }
-                    }
-                    else
-                    {
-                        die(mysqli_error($query));
-                    }
+                    $cookieName = 'userInfo';
+                    $cookieValue= serialize($getNewUserResult);
+                    $expire = time()+604800;
+                    $path = '/';
                     
-                    
+                    setcookie(
+                        $cookieName,
+                        $cookieValue,
+                        $expire,
+                        $path
+                    );
                 }
-                // else
-                // {
-                //     echo "Есть юзер";
-                // }
+                else{
+                    $cookieName = 'userInfo';
+                    $cookieValue= serialize($getNewUserResult);
+                    $expire = time()+604800;
+                    $path = '/';
+                    
+                    setcookie(
+                        $cookieName,
+                        $cookieValue,
+                        $expire,
+                        $path
+                    );
+                }
             }
-            
+            else
+            {
+                die(mysqli_error($getNewUser));
+            }
         }
-        // else
-        // {
-        //     echo "Пароли не свопадают";
-        //     echo "<br>";
+        else
+        {
+            die(mysqli_error($newUser));
+        }
+                
+    }
+    else
+    {
+        echo "Пароли не свопадают";
+        echo "<br>";
 
-        //     echo $password;
-        //     echo "<br>";
+        echo $password;
+        echo "<br>";
 
-        //     echo $repeatPassword;
-        //     echo "<br>";
-        // }
-        
+        echo $repeatPassword;
+        echo "<br>";
     }
     
 ?>
