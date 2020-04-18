@@ -22,10 +22,10 @@ div.main-wrapper > span
 {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
-    grid-gap: 10px 50px;
+    grid-gap: 30px 50px;
 
     margin: 0 auto;
     margin-top: 20px;
@@ -40,16 +40,26 @@ div.main-wrapper > span
     border-radius: 0.5rem;
 
     min-width: 600px;
+
+    height: max-content;
 }
 
 div.item
 {
     display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+div.order-info
+{
+    display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-
-    margin-bottom: 20px;
 }
 
 img.order-candle

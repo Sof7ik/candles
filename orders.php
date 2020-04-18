@@ -27,13 +27,18 @@
 
                     <div class="grid-element">
                         <div class="item">
-                            <img src="/view/resources/img/pics/1.png" alt="candle" class="order-candle">
+                            <span class="order-date">2020-09-29 14:53:07</span>
 
-                            <div class="texts">
-                                <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor</p>
-                                <span>В стакане + с закругленным дном + красная</span>
-                                <span class="item-price">2 * 1000 руб. = 2000 руб.</span>
+                            <div class="order-info">
+                                <img src="/view/resources/img/pics/1.png" alt="candle" class="order-candle">
+
+                                <div class="texts">
+                                    <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor</p>
+                                    <span>В стакане + с закругленным дном + красная</span>
+                                    <span class="item-price">2 * 1000 руб. = 2000 руб.</span>
+                                </div>
                             </div>
+                            
                         </div>
 
                         <div class="item-buttons">
@@ -50,3 +55,12 @@
     <script src="controller/js/login-window.js"></script>
 </body>
 </html>
+
+<?php
+
+// SELECT `order_candle`.`candle_id`, `order_candle`.`order_id`, `all_orders`.`user_id`, `all_orders`.`date`, `candles`.`name`, `types`.`name`, `forms`.`name`, `colors`.`hex`, `candles`.`cost` FROM `order_candle`, `all_orders`, `users`, `candles`, `types`, `forms`, `colors` WHERE `order_candle`.`candle_id` = `candles`.`id` AND `order_candle`.`order_id` = `all_orders`.`order_id` AND `all_orders`.`user_id` = `users`.`id` AND `candles`.`type_id` = `types`.`id` AND `candles`.`form_id` = `forms`.`id` AND `candles`.`color_id` = `colors`.`id`
+
+
+// крутой запрос на вывод заказика, да?
+
+?>
