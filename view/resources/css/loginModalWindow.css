@@ -36,6 +36,11 @@ input.login-input
     padding: 3px;
 }
 
+form
+{
+    margin-bottom: 10px;
+}
+
 form div.regAndLog
 {
     width: 100%;
@@ -87,4 +92,10 @@ ul.login-modal-authtorized li a
 ul.login-modal-authtorized li:hover
 {
     transform: scale(1.03);
+}
+
+a.forgot
+{
+    color: blue;
+    font-size: 13px;
 }
