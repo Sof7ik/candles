@@ -81,7 +81,7 @@
             <div class="constructor-source">
               <h2><a style="color: #fff;" href="#outer-constructor-wrapper">СОЗДАЙ СВОЮ СВЕЧУ!</a></h2>
 
-                <?include './view/mini-constructor.html'?>
+                <?include __DIR__ . '/view/mini-constructor.html'; ?>
               </a>
 
               
@@ -90,7 +90,7 @@
           </div>
 
           <div class="outer-constructor-wrapper" id="outer-constructor-wrapper">
-            <?include './view/constructor.php'?>
+            <?include __DIR__ . '/view/constructor.php'; ?>
           </div>
           
         </div>
@@ -102,8 +102,9 @@
 
       </footer>
     </div>
-    <script src="/controller/js/login-window.js"></script>
-    <script src="/controller/js/leftModalWindow.js"></script>
+
+    <script src="/controller/js/login-window.js" defer></script>
+    <script src="/controller/js/leftModalWindow.js" defer></script>
     <script src="/controller/js/constructor.js" defer></script>
 </body>
 </html>
