@@ -1,7 +1,7 @@
-<?php require './controller/php/connection.php'; ?>
+<?php require 'controller/php/connection.php'; ?>
 <div class="constructor-wrapper">
     <h2>КОНСТРУКТОР</h2>
-    <form action="/controller/php/buy.php" method="POST">
+    <form action="controller/php/buy.php" method="POST">
 
         <div class="inner-constructor-wrapper" id="inner-constructor-wrapper">
 
@@ -19,34 +19,40 @@
                 <div class="candle-type-select candle-select">
                     <h3>Тип</h3>
                     <div class="type__vars">
-                        <input type="radio" name="type__vars" id="vars__opened" value="1" required>
-                        <label for="vars__opened" class="type__vars__label">
-                            <p class="type-var">Открытая</p>
-                        </label>
-                        
-                        <input type="radio" name="type__vars" id="vars__glassed" value="2" required>
-                        <label for="vars__glassed" class="type__vars__label">
-                            <p class="type-var">В стакане</p>
-                        </label>
-                        
+                        <?php
+                            $getAllTypes = mysqli_query($link, "
+                            SELECT id, name FROM `types`;
+                            ");
+                            $getAllTypesResult = mysqli_fetch_all($getAllTypes, MYSQLI_ASSOC);
+
+                            foreach ($getAllTypesResult as $key1 => $value1) {
+                                ?>
+                                    <input type="radio" name="type__vars" id="type-vars__<?echo $value1['id'];?>" value="<?echo $value1['id'];?>" required>
+                                    <label for="type-vars__<?echo $value1['id'];?>" class="type__vars__label">
+                                        <p class="type-var"><?echo $value1['name']; ?></p>
+                                    </label>
+                                <?
+                            }
+                        ?> 
                     </div>
                 </div>
 
                 <div class="candle-shape-select candle-select">
                     <h3>Форма</h3>
                     <div class="shape__vars">
-                        <input type="radio" name="shape__vars" id="vars__tall" value="1" required>
+                        <?php
+                            $getAllShapes = mysqli_query($link, "
+                                SELECT id, name FROM `forms`;
+                            ");
+                            $getAllShapesResult = mysqli_fetch_all($getAllShapes, MYSQLI_ASSOC);
 
-                        <label for="vars__tall" class="shape-var tall"></label>
-
-                        <input type="radio" name="shape__vars" id="vars__circle" value="2" required>
-
-                        <label for="vars__circle" class="shape-var circle"></label>
-
-                        <input type="radio" name="shape__vars" id="vars__rectangle" value="3" required>
-
-                        <label for="vars__rectangle" class="shape-var rectangle"></label>
-
+                            foreach ($getAllShapesResult as $key2 => $value2) {
+                                ?>
+                                <input type="radio" name="shape__vars" id="shape-vars__<?echo $value2['id'];?>" value="<?echo $value2['id'];?>" required>
+                                <label for="shape-vars__<?echo $value2['id'];?>" class="shape-var <?echo $value2['name'];?>"></label>
+                                <?
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -59,30 +65,19 @@
                             ");
                             $getAllColorsResult = mysqli_fetch_all($getAllColors, MYSQLI_ASSOC);
 
-                            foreach ($getAllColorsResult as $key => $value) {
+                            foreach ($getAllColorsResult as $key3 => $value3) {
                                 ?>
-                                <input type="radio" name="color__vars" id="vars__<?echo $value['id'];?>" value="<?echo $value['id'];?>" required>
-                                <label for="vars__<?echo $value['id'];?>" class="color-var" style="background-color: <?echo $value['hex']; ?>"> </label>
+                                <input type="radio" name="color__vars" id="color-vars__<?echo $value3['id'];?>" value="<?echo $value3['id'];?>" required>
+                                <label for="color-vars__<?echo $value3['id'];?>" class="color-var" style="background-color: <?echo $value3['hex']; ?>"> </label>
                                 <?
-                                
                             }
                         ?>
-                        <!-- <input type="radio" name="color__vars" id="vars__red" value="1" required>
-                        <label for="vars__red" class="color-var red"> </label>
-
-                        <input type="radio" name="color__vars" id="vars__green" value="2" required>
-                        <label for="vars__green" class="color-var green"> </label>
-
-                        <input type="radio" name="color__vars" id="vars__blue" value="3" required>
-                        <label for="vars__blue" class="color-var blue"> </label> -->
 
                         <input type="radio" name="color__vars" id="vars__user" value="Юзерная" required>
                         <label for="vars__user" class="color-var input-label"> </label>
 
                         <input type="color" name="user-color" id="select-candle-color" value="#ff0000">
                             <label for="select-candle-color" class="color-var user"> </label>
-
-                        <!-- <div class="color-var user"></div> -->
                     </div>
                 </div>
 
@@ -91,6 +86,11 @@
                     <div class="quantity">
                         <input type="number" name="quantity" id="quantity" min=1 value="1">
                     </div>
+                </div>
+
+                <div class="candle-color-select candle-select">
+                    <h3>Цена </h3>
+                    <input name=price type="text" id="candle-price" value= "1230" readonly style="border: none; outline: none; background-color: transparent; font-size: 30px;">
                 </div>
                 
             </div>
