@@ -1,14 +1,71 @@
-div.leftModal  
+div.leftModal
 {
     width: 0px;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    overflow: hidden;
     background-color: chartreuse;
     z-index: 5;
 
-    transition: width .4s;
+    transition: all .5s;
+}
+
+div.modal-title
+{
+    flex-flow: column nowrap;
+}
+
+div.modal-title > form > img
+{
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+div.modal-title > form
+{
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+ul.infoAboutCandle
+{
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+ul.infoAboutCandle > li
+{
+    font-size: 25px;
+    padding: 10px;
+}
+
+div.buttonsLeftModal
+{
+    flex-flow: row nowrap;
+}
+
+div.buttonsLeftModal input[type='submit']
+{
+    cursor: pointer;
+    background: #C4C4C4;
+    border-radius: 0.3rem;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+div.buttonsLeftModal input[type='submit']:hover
+{
+    background-color: rgb(175, 0, 175);
+}
+
+div.modal-title > p
+{
+    cursor: pointer;
+    font-size: 20px;
 }
 
 div.leftModal *
