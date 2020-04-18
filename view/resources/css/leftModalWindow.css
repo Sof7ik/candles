@@ -1,6 +1,6 @@
 div.leftModal
 {
-    width: 0px;
+    width: 300px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -9,7 +9,17 @@ div.leftModal
     background-color: chartreuse;
     z-index: 5;
 
-    transition: all .5s;
+    transition: all .3s;
+}
+
+div.leftModal.hide
+{
+    width: 0px;
+}
+
+div.leftModal:hover
+{
+    width: 500px;
 }
 
 div.modal-title
