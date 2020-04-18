@@ -52,6 +52,7 @@ div.item
     align-items: flex-start;
 
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 div.order-info
@@ -60,6 +61,8 @@ div.order-info
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
+
+    width: 100%;
 }
 
 img.order-candle
