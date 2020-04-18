@@ -1,3 +1,12 @@
+<?
+
+if (isset($_COOKIE['userInfo']))
+{
+    header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,71 +25,78 @@
 <body>
 
     <div class="wrapper">
-        <?php include './header.php'; ?>
+        <?php include __DIR__ . '/view//header.php'; ?>
 
         <main>
 
             <div class="container">
                 <div class="main-wrapper" style="min-height: 100vh;">
+                    <div class="form-wrapper">
 
-                    <h1>РЕГИСТРАЦИЯ</h1>
+                        <span>РЕГИСТРАЦИЯ</span>
 
-                    <form method='POST' action='/controller/php/reg.php' class="reg-form">
-                        <input type='text' 
-                        placeholder='Введите Имя' 
-                        id='nameU' 
-                        name='nameU'
-                        class="reg-input"
-                        required>
-
-                        <input type='text' 
-                        placeholder='Введите Фамилию' 
-                        id='surnameU' 
-                        name='surnameU'
-                        class="reg-input"
-                        required>
-
-                        <div class="passwordWrapper" id="passwordWrapper-1">
-                            <input type='password' 
-                            placeholder='Введите Пароль' 
-                            id='passwordU' 
-                            name='passwordU'
-                            class="reg-input-password"
+                        <form method='POST' action='' class="reg-form">
+                            <input type='text' 
+                            placeholder='Введите Имя' 
+                            id='nameU' 
+                            name='nameU'
+                            class="reg-input"
                             required>
-                            <a href="#" class="button"></a>
-                        </div>
 
-                        <div class="passwordWrapper" id="passwordWrapper-2">
-                            <input type='password' 
-                            placeholder='Повторно введите Пароль' 
-                            id='repeatPasswordU' 
-                            name='repeatPasswordU' 
-                            class="reg-input-password"
+                            <input type='text' 
+                            placeholder='Введите Фамилию' 
+                            id='surnameU' 
+                            name='surnameU'
+                            class="reg-input"
                             required>
-                            <a href="#" class="button"></a>
-                        </div>
 
-                        <input type='email' 
-                        placeholder='Введите Почту' 
-                        id='emailU' 
-                        name='emailU'
-                        class="reg-input"
-                        required>
+                            <div class="passwordWrapper" id="passwordWrapper-1">
+                                <input type='password' 
+                                placeholder='Введите Пароль' 
+                                id='passwordU' 
+                                name='passwordU'
+                                class="reg-input-password"
+                                required>
+                                <a href="#" class="button"></a>
+                            </div>
 
-                        <input type='tel' 
-                        placeholder='Введите Телефон'
-                        id='telU' name='telU'
-                        class="reg-input"
-                        required>
+                            <div class="passwordWrapper" id="passwordWrapper-2">
+                                <input type='password' 
+                                placeholder='Повторно введите Пароль' 
+                                id='repeatPasswordU' 
+                                name='repeatPasswordU' 
+                                class="reg-input-password"
+                                required>
+                                <a href="#" class="button"></a>
+                            </div>
 
-                        <input type='submit' value='Отправить' id='button' name='button'>
-                    </form>
+                            <input type='email' 
+                            placeholder='Введите Почту' 
+                            id='emailU' 
+                            name='emailU'
+                            class="reg-input"
+                            required>
+
+                            <input type='tel' 
+                            placeholder='Введите Телефон'
+                            id='telU' name='telU'
+                            class="reg-input"
+                            required>
+
+                            <!-- <input type='submit' value='Отправить' id='button' name='button'> -->
+                            <input type="button" id="button" value="Продолжить">
+                        
+                        </form>
+
+                    </div>
+                    
                 </div>
             </div>
         </main>
     </div>
    
-    <script src="/controller/js/login-window.js"></script>
-    <script src="/controller/js/reg.js" defer></script>
+    <script src="controller/js/login-window.js"></script>
+    <script src="controller/js/reg.js" defer></script>
+    <script src="controller/js/regAJAX.js" defer></script>
 </body>
 </html>

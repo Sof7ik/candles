@@ -20,7 +20,9 @@ if (!isset($_COOKIE['userInfo']))
 </head>
 <body>
     <div class="wrapper">
-        <?php include 'header.php'; ?>
+
+        <?php include __DIR__.'/view/header.php'; ?>
+
         <div class="main-wrapper">
             <div class="container">
                 <div class='info'>
@@ -36,7 +38,19 @@ if (!isset($_COOKIE['userInfo']))
                             <p id="name"> 
                                 <?
                                     // echo json_decode($_COOKIE['userInfo'])->name;
-                                    echo unserialize($_COOKIE['userInfo'])['name'];
+                                    if(isset($_COOKIE['userInfo']))
+                                    {
+                                        if (strlen(unserialize($_COOKIE['userInfo'])['name']) <= 0){
+                                            echo "Имя не установлено";
+                                        }
+                                        else {
+                                            echo unserialize($_COOKIE['userInfo'])['name'];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "произошла ошибка с куками";
+                                    }
                                 ?>
                             </p>
                         </li>
@@ -45,7 +59,19 @@ if (!isset($_COOKIE['userInfo']))
                             <p id="surname">
                                 <?
                                     // echo json_decode($_COOKIE['userInfo'])->surname;
-                                    echo unserialize($_COOKIE['userInfo'])['surname'];
+                                    if(isset($_COOKIE['userInfo']))
+                                    {
+                                        if (strlen(unserialize($_COOKIE['userInfo'])['surname']) <= 0){
+                                            echo "Фамилия не установлена";
+                                        }
+                                        else {
+                                            echo unserialize($_COOKIE['userInfo'])['surname'];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "произошла ошибка с куками";
+                                    }
                                 ?>
                             </p>
                         </li>
@@ -54,7 +80,19 @@ if (!isset($_COOKIE['userInfo']))
                             <p id="email">
                                 <?
                                     // echo json_decode($_COOKIE['userInfo'])->email; 
-                                    echo unserialize($_COOKIE['userInfo'])['email'];
+                                    if(isset($_COOKIE['userInfo']))
+                                    {
+                                        if (strlen(unserialize($_COOKIE['userInfo'])['email']) <= 0){
+                                            echo "Адрес электронной почты не установлен";
+                                        }
+                                        else {
+                                            echo unserialize($_COOKIE['userInfo'])['email'];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "произошла ошибка с куками";
+                                    }
                                 ?>
                             </p>
                         </li>
@@ -63,7 +101,19 @@ if (!isset($_COOKIE['userInfo']))
                             <p id="phone">
                                 <?
                                     // echo json_decode($_COOKIE['userInfo'])->phone;
-                                    echo unserialize($_COOKIE['userInfo'])['phone'];
+                                    if(isset($_COOKIE['userInfo']))
+                                    {
+                                        if (strlen(unserialize($_COOKIE['userInfo'])['phone']) <= 0){
+                                            echo "Номер телефона не установлен";
+                                        }
+                                        else {
+                                            echo unserialize($_COOKIE['userInfo'])['phone'];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "произошла ошибка с куками";
+                                    }
                                 ?>
                             </p>
                         </li>
@@ -72,7 +122,21 @@ if (!isset($_COOKIE['userInfo']))
                             <p id="address">
                                 <?
                                     // echo json_decode($_COOKIE['userInfo'])->address;
-                                    echo unserialize($_COOKIE['userInfo'])['address'];
+                                    if (isset($_COOKIE['userInfo']))
+                                    {
+                                        if (strlen(unserialize($_COOKIE['userInfo'])['address']) <= 0)
+                                        {
+                                            echo "Адрес не выбран";
+                                        }
+                                        else {
+                                            echo unserialize($_COOKIE['userInfo'])['address'];
+                                        }
+                                    }
+                                    else 
+                                    {
+                                        echo "произошла ошибка с куками";
+                                    }
+                                    
                                 ?>
                             </p>
                         </li>

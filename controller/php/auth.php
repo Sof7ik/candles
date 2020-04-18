@@ -1,5 +1,11 @@
 <?php
     require_once 'connection.php';
+
+    if (isset($_COOKIE['userInfo']))
+    {
+        header('Location: ../../index.php');
+    }
+
     $buttonAuth = $_POST['buttonAuth'];
     if (isset($buttonAuth))
     {
