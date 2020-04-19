@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/controller/php/connection.php';
+    require_once 'connection.php';
 
     if (isset($_COOKIE['userInfo']))
     {
