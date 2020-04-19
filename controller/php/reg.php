@@ -1,10 +1,5 @@
 <?php
-    require_once __DIR__ . '/controller/php/connection.php';
-
-    if (isset($_COOKIE['userInfo']))
-    {
-        header('Location: ../../index.php');
-    }
+    require_once 'connection.php';
 
     $name = $_POST['name'];
     $surname = $_POST['surname'];
