@@ -37,3 +37,27 @@ showIcons.forEach( (elem) => {
         secondPass.getAttribute('type') == 'password' ? secondPass.setAttribute('type', 'text') :  secondPass.setAttribute('type', 'password');
     })
 })
+
+document.getElementById('button').addEventListener('click', () => {
+    let valueTel = document.forms['regForm']['telU'].value;
+    if(valueTel == ['/^0-9_/'] && valueTel != ""){
+        console.log('123')
+    }
+})
+
+document.getElementById('telU').addEventListener('input', (e) => {
+    let a = /[a-zA-zа-яА-Я№_/\//$&,:;=?@#|"{}\]\['<>.^*()%!-]/;
+    e.target.value = e.target.value.replace(a, '').trim();
+})
+
+document.getElementById('emailU').addEventListener('input', (e) => {
+    let a = /[№_/\//$&,:;=?#|"{}\]\['<>^*()%!-+]/;
+    e.target.value = e.target.value.replace(a, '').trim();
+})
+
+document.querySelectorAll('input[type="text"]').forEach((elem) => {
+    elem.addEventListener('input', (e) => {
+        let a = /[0-9№_/\//$&+,:;=?@#|"{}\]\['<>.^*()%!-]/;
+        e.target.value = e.target.value.replace(a, '').trim();
+    })
+})
