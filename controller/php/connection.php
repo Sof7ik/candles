@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
     $user = 'root';
-    $password = '';
+    $password = 'root';
     $db = 'candles';
     $link = mysqli_connect($host, $user, $password, $db);
 

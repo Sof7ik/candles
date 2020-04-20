@@ -14,13 +14,25 @@ let costType = 0, costShape = 0, quantity = 1;
 
 document.querySelectorAll('div.type__vars label').forEach((e) => {
     e.addEventListener('click', (elem) => {
-        switch(elem.target.textContent){
-            case 'Открытая':
-                costType = 1000;
-                break;
-            case 'В стакане':
-                costType = 2000;
-                break;
+        if(elem.target.hasAttribute('for')){
+            switch(elem.target.getAttribute('for').replace('type-vars__', '')){
+                case '1':
+                    costType = 1000;
+                    break;
+                case '2':
+                    costType = 2000;
+                    break;
+            }
+        }
+        else{
+            switch(elem.target.textContent){
+                case 'Открытая':
+                    costType = 1000;
+                    break;
+                case 'В стакане':
+                    costType = 2000;
+                    break;
+            }
         }
         counting(costType, costShape, quantity)
     })
@@ -29,13 +41,13 @@ document.querySelectorAll('div.type__vars label').forEach((e) => {
 document.querySelectorAll('div.shape__vars label').forEach((e) => {
     e.addEventListener('click', (elem) => {
         switch(elem.target.className.replace('shape-var', '').trim()){
-            case 'tall':
+            case 'Длинная':
                 costShape = 1000;
                 break;
-            case 'circle':
+            case 'С закругленным низом':
                 costShape = 1500;
                 break;
-            case 'rectangle':
+            case 'Прямоугольная':
                 costShape = 2000;
                 break;
         }
