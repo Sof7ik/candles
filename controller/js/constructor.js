@@ -41,13 +41,13 @@ document.querySelectorAll('div.type__vars label').forEach((e) => {
 document.querySelectorAll('div.shape__vars label').forEach((e) => {
     e.addEventListener('click', (elem) => {
         switch(elem.target.className.replace('shape-var', '').trim()){
-            case 'Длинная':
+            case 'tall':
                 costShape = 1000;
                 break;
-            case 'С закругленным низом':
+            case 'circle':
                 costShape = 1500;
                 break;
-            case 'Прямоугольная':
+            case 'rectangle':
                 costShape = 2000;
                 break;
         }
