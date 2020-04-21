@@ -37,11 +37,16 @@ nav
     padding: 0 50px;
 }
 
-nav a
+nav a.nav-items
 {
     color: #000;
 
     margin-right: 40px;
+}
+
+nav a.nav-items:last-child
+{
+    margin-right: unset;
 }
 
 button

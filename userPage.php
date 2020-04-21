@@ -3,6 +3,12 @@ if (!isset($_COOKIE['userInfo']))
 {
     header('Location: ../index.php');
 }
+// else
+// {
+//     echo "<pre>";
+//         print_r(unserialize($_COOKIE['userInfo'])) ;
+//     echo "</pre>";
+// }
 ?>
 
 <!DOCTYPE html>

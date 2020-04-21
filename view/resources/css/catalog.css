@@ -1,0 +1,261 @@
+div.main-wrapper 
+{
+    align-items: flex-start;
+}
+
+div.main-wrapper div.inner-wrapper
+{
+    margin-top: 100px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+aside.left-filters
+{
+    background-color: #fff;
+    padding: 15px;
+
+    position: sticky;
+    top: 100px;
+
+    background-color: rgb(78, 78, 78);
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div.filters-wrapper
+{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ul.filters-wrapper > li 
+{
+    padding: 15px 0 0 0px;
+}
+
+ul.filters-wrapper > li:first-child
+{
+    padding: 0px;
+}
+
+ul.filters-wrapper > li:last-child
+{
+    padding: 15px 0px 15px 0px ;
+}
+
+ul.filters-wrapper > li > span
+{
+    display: block;
+
+    font-size: 18px;
+    text-align: center;
+
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+
+    border-bottom: 2px solid rgba(253, 219, 26, 0.993);
+}
+
+ul.filter-type > li
+{
+    margin: 5px 0;
+}
+
+button.show-by-filters
+{
+    background-color: rgba(253, 219, 26, 0.993);
+
+    color: #000;
+    font-size: 17px;
+
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+section.goods
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-left: 40px;
+}
+
+div.goods-sort-wrapper
+{
+    background-color: rgb(78, 78, 78);
+
+    border-radius: 5px;
+    padding: 5px;
+
+    width: 100%;
+}
+
+div.goods-sort
+{
+    padding: 15px;
+
+    background-color: #fff; 
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    border-radius: 15px;
+}
+
+div.goods-sort button
+{
+    margin: unset;
+    margin-top: 15px;
+}
+
+div.selects
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.order-by-wrapper span
+{
+    display: block;
+    margin-bottom: 10px;
+}
+
+select.order-by
+{
+    padding: 5px;
+
+    outline: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    border: 2px solid #000;
+    border-radius: 20px;
+
+    background-color: rgba(180, 180, 180, 0.5);
+}
+
+div.goods
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+    padding: 5px;
+    
+
+    background-color: rgb(61, 61, 61);
+
+    border-radius: 10px;
+
+    transition: all .3s;
+
+    margin-top: 10px;
+}
+
+div.goods__candle-wrapper
+{
+    box-shadow: 0px 0px 1px 2px #fff;
+    border-radius: 5px;
+}
+
+div.goods__candle
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #a8a8a8;
+    padding: 10px;
+
+    box-shadow: inset 0px 0px 1px 2px #fff;
+}
+
+img.goods__candle-img
+{
+    width: 200px;
+    display: block;
+    
+    margin-bottom: 10px;
+}
+
+span.candle-name
+{
+    display: block;
+
+    font-size: 23px;
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+div.candle-params
+{
+    margin-bottom: 15px;
+}
+
+div.candle-params span
+{
+    display: block;
+    text-align: center;
+}
+
+span.candle-price
+{
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+button.candle-buy
+{
+    background-color: rgb(0, 132, 255);
+
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    font-size: 18px;
+}
+
+@media all and (max-width: 1665px)
+{
+    div.goods
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 1423px)
+{
+    div.goods
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 1181px)
+{
+    div.goods
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 938px)
+{
+    
+}

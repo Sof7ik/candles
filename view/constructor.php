@@ -6,7 +6,11 @@
         <div class="inner-constructor-wrapper" id="inner-constructor-wrapper">
 
             <div class="image-and-buttons">
-                <div class="image"></div>
+                <div class="canvas-wrapper">
+                    <canvas id="constructor-canvas-1" width="250px" height="250px"></canvas>
+                    <div class="image"></div>
+                </div>
+                
 
                 <div class="buttons">
                     <input type="submit" name="submit-btn" value="КУПИТЬ" class="buy-button">
@@ -29,7 +33,7 @@
                                 ?>
                                     <input type="radio" name="type__vars" id="type-vars__<?echo $value1['id'];?>" value="<?echo $value1['id'];?>" required>
                                     <label for="type-vars__<?echo $value1['id'];?>" class="type__vars__label">
-                                        <p class="type-var"><?echo $value1['name']; ?></p>
+                                        <?=$value1['name']; ?>
                                     </label>
                                 <?
                             }
@@ -48,7 +52,7 @@
 
                             foreach ($getAllShapesResult as $key2 => $value2) {
                                 ?>
-                                <input type="radio" name="shape__vars" id="shape-vars__<?echo $value2['id'];?>" value="<?echo $value2['id'];?>" required>
+                                <input type="radio" name="shape__vars" id="shape-vars__<?echo $value2['id'];?>" value="<?echo $value2['id'];?>" required class="select-form">
                                 <label for="shape-vars__<?echo $value2['id'];?>" class="shape-var <?echo $value2['name'];?>"></label>
                                 <?
                             }
@@ -65,9 +69,13 @@
                             ");
                             $getAllColorsResult = mysqli_fetch_all($getAllColors, MYSQLI_ASSOC);
 
+                            // echo "<pre>";
+                            //     print_r($getAllColorsResult);
+                            // echo "</pre>";
+
                             foreach ($getAllColorsResult as $key3 => $value3) {
                                 ?>
-                                <input type="radio" name="color__vars" id="color-vars__<?echo $value3['id'];?>" value="<?echo $value3['id'];?>" required>
+                                <input type="radio" name="color__vars" id="color-vars__<?echo $value3['id'];?>" value="<?echo $value3['id'];?>" required class="color__vars-select" data-colorhex = "<?echo $value3['hex'];?> ">
                                 <label for="color-vars__<?echo $value3['id'];?>" class="color-var" style="background-color: <?echo $value3['hex']; ?>"> </label>
                                 <?
                             }

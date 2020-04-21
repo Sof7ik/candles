@@ -64,6 +64,8 @@ form div.regAndLog a
     font-size: 15px;
     padding: 3px;
     margin: 0px;
+
+    color: #000;
 }
 
 ul.login-modal-authtorized li
@@ -87,6 +89,8 @@ ul.login-modal-authtorized li a
     text-align: center;
     display: block;
     width: 100%;
+
+    color: #000;
 }
 
 ul.login-modal-authtorized li:hover

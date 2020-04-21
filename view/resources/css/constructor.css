@@ -23,25 +23,43 @@ div.constructor-wrapper h2
     color: #fff;
     letter-spacing: 2px;
     font-size: 25px;
+
+    margin-bottom: 15px;
 }
 
 div.inner-constructor-wrapper
 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
+}
+
+div.canvas-wrapper
+{
+    position: relative;
+}
+
+canvas
+{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
 }
 
 div.image
 {
-    width: 350px;
-    height: 350px;
-    
+    width: 250px;
+    height: 250px;
+
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+
     background-image: url('/view/resources/img/pics/1.png');
     background-size: contain;
-
-    margin-top: 10px;
 
     border-radius: 5rem;
 }
@@ -97,7 +115,7 @@ div.buttons .buy-button:nth-child(2):hover
 
 div.params
 {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 div.params h3

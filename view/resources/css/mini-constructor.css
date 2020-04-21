@@ -8,4 +8,5 @@ div.inner-constructor-wrapper.mini div.image
 {
     width: 140px;
     height: 140px;
+    position: static;
 }
