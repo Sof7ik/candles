@@ -5,12 +5,12 @@ div.main-wrapper
 
 div.main-wrapper div.inner-wrapper
 {
-    margin-top: 100px;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
+
+    margin: 100px auto;
 }
 
 aside.left-filters
@@ -31,7 +31,7 @@ div.filters-wrapper
 {
     background-color: #fff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 ul.filters-wrapper > li 
@@ -67,15 +67,21 @@ ul.filter-type > li
     margin: 5px 0;
 }
 
-button.show-by-filters
+input.show-by-filters
 {
     background-color: rgba(253, 219, 26, 0.993);
 
     color: #000;
+    
     font-size: 17px;
 
     border-radius: 20px;
-    margin: 0 auto;
+
+    border: none;
+    outline: none;
+
+    padding: 5px 20px;
+    margin-top: 20px;
 }
 
 section.goods
@@ -104,6 +110,7 @@ div.goods-sort
 
     background-color: #fff; 
     width: 100%;
+    
 
     display: flex;
     flex-flow: column nowrap;
@@ -182,6 +189,8 @@ div.goods__candle
     background-color: #a8a8a8;
     padding: 10px;
 
+    height: 100%;
+
     box-shadow: inset 0px 0px 1px 2px #fff;
 }
 
@@ -229,6 +238,7 @@ button.candle-buy
     padding: 10px 20px;
 
     font-size: 18px;
+
 }
 
 @media all and (max-width: 1665px)
