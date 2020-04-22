@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 15 2020 г., 12:35
+-- Время создания: Апр 16 2020 г., 12:59
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.4
 
@@ -133,19 +133,22 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` varchar(12) NOT NULL
+  `phone` varchar(12) NOT NULL,
+  `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES
-(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
-(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
-(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543');
+INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`, `address`) VALUES
+(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789', 'Московская область, г. Мытищи, ул. Нововокзальная, д. 1'),
+(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789', 'Московская область, г. Пушкино, ул. Центральная, д. 16'),
+(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543', 'Московская область, г. Ивантеевка, ул. Задорожная, д. 3А'),
+(34, 'Андрей', 'Павлов', '$2y$10$pib3WfJ8t7mUHjCS1.AK8OZu/MD7BjOrXsMYcNbh1HNuiMhkOLdw6', 'byc@mail.ru', '89057661656', NULL),
+(35, 'Дима', 'Димов', '$2y$10$IN3QfLJegojhHvUzR9UnQeSCC187JHJafhyKIFWoWEsSnZChGMa.K', 'test@mail.ru', '89057661646', NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -216,7 +219,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
