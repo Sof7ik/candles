@@ -30,7 +30,7 @@ document.querySelectorAll('.candles__candle').forEach((e) => {
         if(number1 != number2 && number1 != undefined){
             number2 = number1;
             deleteInfoCandle();
-            getInfoCandle("GET", `../controller/php/getInfoCandle.php?id=${number2}`);
+            getInfoCandle("GET", `../php/getInfoCandle.php?id=${number2}`);
         }
         
         document.querySelector('div.leftModal .modal-title .closeLeftModal').addEventListener('click', hideModal);
@@ -43,18 +43,21 @@ function getInfoCandle(method, url)
         method: method
     }).then((res) =>
     {
-       return res.json();
-    }).then((res) => {
-        document.querySelector('ul.infoAboutCandle').insertAdjacentHTML('afterbegin', `
-            <li>Type: <span>${res['type_name']}</span></li>
-            <li>Form: <span>${res['form_name']}</span></li>
-            <li>Color: <span>${res['color_name']}</span></li>
-            <li>Price: <span></span></li>
-        `)
-        document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
-            e.style.display = 'flex';
-        })
+        console.log(res.json());
+        // return res.json();
     })
+    // .then((res) => {
+    //     console.log(res);
+    //     document.querySelector('ul.infoAboutCandle').insertAdjacentHTML('afterbegin', `
+    //         <li>Type: <span>${res.type_name}</span></li>
+    //         <li>Form: <span>${res.form_name}</span></li>
+    //         <li>Color: <span>${res.color_name}</span></li>
+    //         <li>Price: <span></span></li>
+    //     `)
+    //     document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
+    //         e.style.display = 'flex';
+    //     })
+    // })
     
 }
 

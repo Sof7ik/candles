@@ -18,7 +18,6 @@
 </head>
 <body>
 <div class="wrapper">
-    <?php include __DIR__. '/view/modalWindow.html'; ?>
 
     <?php include __DIR__. '/view/header.php';?>
       
@@ -156,7 +155,7 @@
                                 $selectAllCandles = mysqli_query($link, 
                                 "SELECT 
 
-                                `candles`.`id` AS 'id', `candles`.`name` AS 'name', `candles`.`cost` AS 'price', `types`.`name` AS 'typeName', `forms`.`name` AS 'formName', `colors`.`hex` AS 'colorHex' 
+                                `candles`.`id` AS 'id', `candles`.`name` AS 'name', `candles`.`cost` AS 'price', `types`.`name` AS 'typeName', `forms`.`name_rus` AS 'formName', `colors`.`hex` AS 'colorHex' 
 
                                 FROM 
 

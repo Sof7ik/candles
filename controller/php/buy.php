@@ -68,22 +68,20 @@
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
 
-    echo $type . " - Тип";
-    echo "<br>";
-    echo $shape. " - Форма";
-    echo "<br>";
-    echo $quantity. " - Количество";
-    echo "<br>";
-    echo $price. " - Цена";
-    echo "<br>";
-    echo $color . " - цвет";
-    echo "<br>";
+    // echo $type . " - Тип";
+    // echo "<br>";
+    // echo $shape. " - Форма";
+    // echo "<br>";
+    // echo $quantity. " - Количество";
+    // echo "<br>";
+    // echo $price. " - Цена";
+    // echo "<br>";
+    // echo $color . " - цвет";
+    // echo "<br>";
 
     $checkCandle = mysqli_query($link, 
-    "SELECT 
-    `type_id`, 
-    `form_id`, 
-    `color_id` 
+    "SELECT
+    `id`
 
     FROM 
     `candles`
@@ -97,85 +95,98 @@
 
     if ($checkCandle)
     {
+        // echo "Считаем записи в БД";
         $countCheckCandle = mysqli_num_rows($checkCandle);
         if ($countCheckCandle > 0)
         {
+            // echo "<br>";
+            // echo "такая запись есть";
             $checkCandleResult = mysqli_fetch_all($checkCandle, MYSQLI_ASSOC);
-            echo "<pre>";
-                print_r($checkCandleResult);
-            echo "<pre>";
 
-            echo "<p style='color: red; font-size: 40px;'>Такая свечка уже есть</p>";
+            $lastCandleId = $checkCandleResult[0]['id'];
+
+            // echo "<br>";
+            // echo "id такой свечки - " . $lastCandleId;
         }
+
         else
         {
+            // echo "Такой записи нет, вставляем в бд";
             // вставляем это все в БД в таблицу 'candles'
             $newCandle = mysqli_query($link, 
             "INSERT INTO `candles`
-            (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) VALUES 
-            (NULL, 'Юзерная свеча 1', $type, $shape, $color, $price)
+            (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`, `sale`, `top`) VALUES 
+            (NULL, 'Юзерная свеча 1', $type, $shape, $color, $price, 0, 0)
             ");
 
-            echo "INSERT INTO `candles`
-            (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) VALUES 
-            (NULL, 'Юзерная свеча 1', $type, $shape, $color, $price)";
-            echo "<br>";
+            // echo "INSERT INTO `candles`
+            // (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`, `sale`, `top`) VALUES 
+            // (NULL, 'Юзерная свеча 1', $type, $shape, $color, $price, 0, 0)";
 
             if($newCandle)
             {
+                // echo "Свеча в базе";
                 // header('Location: ../../index.php');
                 $lastCandle = mysqli_query($link, "SELECT id FROM `candles` ORDER BY `id` DESC LIMIT 1;");
-                if($lastCandle)
-                {
-                    $lastCandleResult = mysqli_fetch_assoc($lastCandle);
-                    $lastCandleId = $lastCandleResult['id'];
-                    $userId = unserialize($_COOKIE['userInfo'])['id'];
-                    $newOrder = mysqli_query($link, 
-                    "INSERT INTO `orders`
-                    (`order_id`, `user_id`, `date`) VALUES 
-                    (NULL, $userId, NOW());");
-                    
-
-                    echo "INSERT INTO `orders`
-                    (`order_id`, `user_id`, `date`) VALUES 
-                    (NULL, $userId, NOW());";
-                    echo "<br>";
-
-                    if ($newOrder)
-                    {  
-                        $lastOrder = mysqli_query($link, "SELECT `order_id` FROM `orders` ORDER BY `order_id` DESC LIMIT 1;");
-                        $lastOrdereResult = mysqli_fetch_assoc($lastOrder);
-                        $lastOrderId = $lastOrdereResult['order_id'];
-
-                        $last = mysqli_query($link, 
-                        "INSERT INTO `order_candle`
-                        (`order_id`, `candle_id`, `quantity`) VALUES 
-                        ($lastOrderId,$lastCandleId,$quantity)");
-
-                        echo "INSERT INTO `order_candle`
-                        (`order_id`, `candle_id`, `quantity`) VALUES 
-                        ($lastOrderId,$lastCandleId,$quantity)";
-                        echo "<br>";
-                        if (!$last)
-                        {
-                            die("Ошибкка: " . mysqli_error($link)); 
-                        }
-                    }
-                    else
-                    {
-                        die("Ошибкка: " . mysqli_error($link)); 
-                    }
-                }
-                else 
-                {
-                    die("Ошибкка: " . mysqli_error($link));
-                }
             }
             // если что-то не так, то выводим ошибку
             else
             {
-                die("Ошибкка: " . mysqli_error($link));
+                die("Ошибка: " . mysqli_error($link));
             }
+
+        }
+
+        if($lastCandle || $countCheckCandle > 0)
+        {
+            if ($lastCandle)
+            {
+                // echo "вЫполнился запрос на последнюю свечу";
+                $lastCandleResult = mysqli_fetch_assoc($lastCandle);
+                $lastCandleId = $lastCandleResult['id'];
+            }
+
+            // echo "<br>";
+            // echo "берем текущего пользователя";
+            $userId = unserialize($_COOKIE['userInfo'])['id'];
+            $newOrder = mysqli_query($link, 
+            "INSERT INTO `orders`
+            (`order_id`, `user_id`, `date`) VALUES 
+            (NULL, $userId, NOW());");
+
+            // echo "<br>";
+            // echo "INSERT INTO `orders`
+            // (`order_id`, `user_id`, `date`) VALUES 
+            // (NULL, $userId, NOW())";
+        }
+        else 
+        {
+            die("Ошибкка: " . mysqli_error($link));
+        }
+
+        if ($newOrder)
+        {  
+            // echo "<br>";
+            // echo "берем id полсденего заказа";
+            $lastOrder = mysqli_query($link, "SELECT `order_id` FROM `orders` ORDER BY `order_id` DESC LIMIT 1;");
+            $lastOrdereResult = mysqli_fetch_assoc($lastOrder);
+            $lastOrderId = $lastOrdereResult['order_id'];
+
+            $last = mysqli_query($link, 
+            "INSERT INTO `order_candle`
+            (`order_id`, `candle_id`, `quantity`) VALUES 
+            ($lastOrderId,$lastCandleId,$quantity)");
+
+            header('Location: ../../index.php');
+
+            if (!$last)
+            {
+                die("Ошибкка: " . mysqli_error($link)); 
+            }
+        }
+        else
+        {
+            die("Ошибкка: " . mysqli_error($link)); 
         }
     }
     else

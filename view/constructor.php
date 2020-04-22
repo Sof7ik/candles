@@ -7,7 +7,9 @@
 
             <div class="image-and-buttons">
                 <div class="canvas-wrapper">
-                    <canvas id="constructor-canvas-1" width="250px" height="250px"></canvas>
+                    <!-- <canvas id="constructor-canvas-1" width="250px" height="250px"></canvas> -->
+                    <canvas id="constructor-canvas-2" width="250px" height="250px"></canvas>
+                    <canvas id="constructor-canvas-3" width="250px" height="250px"></canvas>
                     <div class="image"></div>
                 </div>
                 

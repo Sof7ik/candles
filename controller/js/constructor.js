@@ -1,18 +1,51 @@
 const inputQuantity = document.getElementById('quantity');
+const divImageElem = document.querySelectorAll('div.image');
 const canvas1Elem = document.getElementById('constructor-canvas-1');
+const canvas2Elem = document.getElementById('constructor-canvas-2');
+const canvas3Elem = document.getElementById('constructor-canvas-3');
 const labelUserColorDisplayElem = document.querySelector('label.color-var.user');
 
 // - canvas controller
-const canvas1 = canvas1Elem.getContext('2d');
+// const canvas1 = canvas1Elem.getContext('2d');
 
-canvas1.quadraticCurveTo(120, 139, 194, 127);
-canvas1.quadraticCurveTo(187, 200, 160, 203);
-canvas1.quadraticCurveTo(120, 213, 90, 203);
-canvas1.quadraticCurveTo(84, 200, 80, 195);
-canvas1.quadraticCurveTo(75, 195, 56, 128);
+// canvas1.moveTo(56, 128);
 
-canvas1.strokeStyle = '#000';
-canvas1.stroke();
+// canvas1.quadraticCurveTo(120, 148, 194, 127);
+// canvas1.quadraticCurveTo(187, 200, 160, 203);
+// canvas1.quadraticCurveTo(120, 213, 90, 203);
+// canvas1.quadraticCurveTo(84, 200, 80, 195);
+// canvas1.quadraticCurveTo(75, 195, 56, 128);
+
+// canvas1.strokeStyle = '#000';
+// canvas1.stroke();
+
+const canvas2 = canvas2Elem.getContext('2d');
+
+canvas2.moveTo(73, 77);
+
+canvas2.quadraticCurveTo(110, 110, 172, 75);
+canvas2.quadraticCurveTo(160, 135, 165, 160);
+
+canvas2.stroke();
+
+document.querySelectorAll('div.shape__vars input[type="radio"]').forEach( (elem) => {
+    elem.addEventListener('click', function changeImageOnClick (event) {
+        switch (event.target.value) {
+            case '1':
+                divImageElem[1].style.backgroundImage = 'url("../../view/resources/img/pics/4.png")';
+                break;
+            case '2':
+                divImageElem[1].style.backgroundImage = 'url("../../view/resources/img/pics/1.png")';
+                break;
+            case '3':
+                divImageElem[1].style.backgroundImage = 'url("../../view/resources/img/pics/5.png")';
+                break;
+            default:
+                break;
+        }
+        
+    })
+})
 
 document.querySelector('#select-candle-color').addEventListener('input', function changeColorOnInput(e) {
     labelUserColorDisplayElem.style.background = e.target.value;

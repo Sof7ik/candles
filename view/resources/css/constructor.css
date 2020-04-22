@@ -42,23 +42,42 @@ div.canvas-wrapper
 
 canvas
 {
-    position: absolute;
-    z-index: 3;
+    position: absolute !important;
     left: 0;
     top: 0;
 }
+
+#constructor-canvas-1
+{
+    z-index: 3;
+    position: absolute;
+}
+
+#constructor-canvas-2
+{
+    z-index: 4;
+    position: absolute;
+}
+
+#constructor-canvas-3
+{
+    z-index: 5;
+    position: absolute;
+} 
+
 
 div.image
 {
     width: 250px;
     height: 250px;
 
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 0px;
+    /* position: absolute;
+    z-index: 2; */
+    /* left: 0px;
+    top: 0px; */
 
-    background-image: url('/view/resources/img/pics/1.png');
+    /* background-image: url('/view/resources/img/pics/1.png'); */
+    background-image: url('/view/resources/img/pics/4.png');
     background-size: contain;
 
     border-radius: 5rem;
