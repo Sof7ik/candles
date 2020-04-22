@@ -2,12 +2,7 @@
     <div class="modal-title">
         <form>
             <img src='/view/resources/img/pics/1.png' width='300px' height='300px'>
-            <ul class='infoAboutCandle'>
-                <li>Type: <span>Lorem ipsum</span></li>
-                <li>Form: <span>Lorem ipsum</span></li>
-                <li>Color: <span>Lorem ipsum</span></li>
-                <li>Price: <span>Lorem ipsum</span></li>
-            </ul>
+            <ul class='infoAboutCandle'></ul>
             <div class='buttonsLeftModal'>
                 <input type='submit' name='buyCandleLM' value='КУПИТЬ' class='buyCandleLM'>
                 <input type='submit' name='basketLM' value='В КОРЗИНУ' class='basketLM'>

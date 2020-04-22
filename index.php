@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="wrapper">
-      <?php include __DIR__.'/view/modalWindow.html'; ?>
+      <?php include __DIR__.'/view/modalWindow.php'; ?>
 
       <?php include __DIR__.'/view/header.php';?>
       

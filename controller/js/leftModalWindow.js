@@ -1,10 +1,11 @@
-let number1, number2;
+let number1, number2;   
 
 function showModal(){
     document.querySelector('div.leftModal').classList.remove('hide');
     document.querySelectorAll('div.leftModal *').forEach((tmp) => {
         tmp.style.display = "flex";
     })
+    getInfoCandle("GET", `../controller/php/getInfoCandle.php?id=${number1}`);
     number2 = number1;
     number1 = undefined;
 }
@@ -14,6 +15,7 @@ function hideModal(){
     document.querySelectorAll('div.leftModal *').forEach((tmp) => {
         tmp.style.display = 'none';
     })
+    deleteInfoCandle();
 }
 
 document.querySelectorAll('.candles__candle').forEach((e) => {
@@ -27,9 +29,37 @@ document.querySelectorAll('.candles__candle').forEach((e) => {
         }
         if(number1 != number2 && number1 != undefined){
             number2 = number1;
-            document.querySelector('div.leftModal .modal-title .closeLeftModal').textContent = 'изменено' + number2;
+            deleteInfoCandle();
+            getInfoCandle("GET", `../controller/php/getInfoCandle.php?id=${number2}`);
         }
-
+        
         document.querySelector('div.leftModal .modal-title .closeLeftModal').addEventListener('click', hideModal);
     })
 })
+
+function getInfoCandle(method, url)
+{
+    fetch(url, {
+        method: method
+    }).then((res) =>
+    {
+       return res.json();
+    }).then((res) => {
+        document.querySelector('ul.infoAboutCandle').insertAdjacentHTML('afterbegin', `
+            <li>Type: <span>${res['type_name']}</span></li>
+            <li>Form: <span>${res['form_name']}</span></li>
+            <li>Color: <span>${res['color_name']}</span></li>
+            <li>Price: <span></span></li>
+        `)
+        document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
+            e.style.display = 'flex';
+        })
+    })
+    
+}
+
+function deleteInfoCandle(){
+    document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
+        e.remove();
+    })
+}
