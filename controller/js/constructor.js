@@ -19,14 +19,31 @@ const labelUserColorDisplayElem = document.querySelector('label.color-var.user')
 // canvas1.strokeStyle = '#000';
 // canvas1.stroke();
 
-const canvas2 = canvas2Elem.getContext('2d');
+// const canvas2 = canvas2Elem.getContext('2d');
 
-canvas2.moveTo(73, 77);
+// canvas2.moveTo(73, 77);
 
-canvas2.quadraticCurveTo(110, 110, 172, 75);
-canvas2.quadraticCurveTo(160, 135, 165, 160);
+// canvas2.quadraticCurveTo(110, 110, 172, 75);
+// canvas2.quadraticCurveTo(165, 123, 167, 130);
+// canvas2.quadraticCurveTo(165, 150, 171, 195);
 
-canvas2.stroke();
+// // canvas2.quadraticCurveTo(123, 245, 74, 195);
+// canvas2.quadraticCurveTo(123, 245, 75, 195);
+
+// canvas2.quadraticCurveTo(85, 125, 73, 77);
+
+// canvas2.fillStyle = 'blue';
+// canvas2.fill();
+
+// canvas2.stroke();
+
+const cannvas3 = canvas3Elem.getContext('2d');
+
+canvas3.moveTo(50, 50);
+canvas3.lineTo(100, 100);
+
+canvas3.strokeStyle = '#000';
+canvas3.stroke();
 
 document.querySelectorAll('div.shape__vars input[type="radio"]').forEach( (elem) => {
     elem.addEventListener('click', function changeImageOnClick (event) {

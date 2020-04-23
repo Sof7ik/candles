@@ -77,7 +77,8 @@ div.image
     top: 0px; */
 
     /* background-image: url('/view/resources/img/pics/1.png'); */
-    background-image: url('/view/resources/img/pics/4.png');
+    /* background-image: url('/view/resources/img/pics/4.png'); */
+    background-image: url('/view/resources/img/pics/5.png');
     background-size: contain;
 
     border-radius: 5rem;
