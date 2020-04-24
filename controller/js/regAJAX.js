@@ -10,18 +10,18 @@ buttonElem = document.getElementById('button');
 
 const data = new FormData();
 
-let DD01E6A99300E8223E6C2BDFB741DC4176048F4;
+// let DD01E6A99300E8223E6C2BDFB741DC4176048F4;
 
 
 
-DD01E6A99300E8223E6C2BDFB741DC4176048F4 = Math.round(Math.random() * 12312312313213);
+// DD01E6A99300E8223E6C2BDFB741DC4176048F4 = Math.round(Math.random() * 12312312313213);
 
-DD01E6A99300E8223E6C2BDFB741DC4176048F4 = DD01E6A99300E8223E6C2BDFB741DC4176048F4.toString();
+// DD01E6A99300E8223E6C2BDFB741DC4176048F4 = DD01E6A99300E8223E6C2BDFB741DC4176048F4.toString();
 
 
-// function generateNumber() {
-//     return DD01E6A99300E8223E6C2BDFB741DC4176048F4 = Math.round(Math.random() * (9999 - 1000) + 1000);
-// }
+function generateNumber() {
+    return rand = Math.round(Math.random() * (9999 - 1000) + 1000);
+}
 
 //функция проверки существаования пользователя по email-адресу
 function checkUser (method, url, data)
@@ -29,8 +29,8 @@ function checkUser (method, url, data)
     const userEmail = new FormData();
     userEmail.append('email', data);
 
-    console.log("email из инпута", data);
-    console.log("formData", userEmail);
+    // console.log("email из инпута", data);
+    // console.log("formData", userEmail);
 
     fetch(url, {
         method: method,
@@ -41,7 +41,7 @@ function checkUser (method, url, data)
     })
     .then((res) =>
     {
-        console.log(res);
+        // console.log(res);
         if (res == "1"){
             alert("Пользователь с таким  адресом электронной почты уже существует. Пожалуста, укажите другой E-mail.");
         }
@@ -52,18 +52,18 @@ function checkUser (method, url, data)
                 buttonElem.insertAdjacentHTML('afterend', 
                 `
                 <div class="user-code">
-                    <span>Введите код, который генерируется в JavaScript</span>
+                    <span>Введите код, отправленный Вам на указанную email-почту</span>
                     <input type="text" name="name" id="user-code-input" autofocus>
-
+                    
                     <button id="create-user">Зарегаться</button>
                 </div>
                 `);
-                // document.getElementById('create-user').insertAdjacentHTML('beforebegin', 
-                //     `
-                //     <p>Ваш код</p>
-                //     <p id="random-code">${generateNumber()}</p>
-                //     `
-                // );
+                document.getElementById('create-user').insertAdjacentHTML('beforebegin', 
+                    `
+                    <p>Ваш код</p>
+                    <p id="random-code">${generateNumber()}</p>
+                    `
+                );
                 checkCodes();
             }
             else 
@@ -74,13 +74,13 @@ function checkUser (method, url, data)
     });
 }
 
-let E798E7470650C5BCCC6C4C2B2EAE0312BAD3E = DD01E6A99300E8223E6C2BDFB741DC4176048F4;
+// let E798E7470650C5BCCC6C4C2B2EAE0312BAD3E = DD01E6A99300E8223E6C2BDFB741DC4176048F4;
 
 //функция проверки совпадения кодовых чисел
 function checkCodes () {
     document.getElementById('create-user').addEventListener('click', (event)=> {
         event.preventDefault();
-        if (E798E7470650C5BCCC6C4C2B2EAE0312BAD3E == document.getElementById('user-code-input').value)
+        if (rand == document.getElementById('user-code-input').value)
         {
             insertNewUser("POST", "../controller/php/reg.php", setFormData());
         }
@@ -93,22 +93,22 @@ function checkCodes () {
     })
 }
 
-for(let i = 0; i < DD01E6A99300E8223E6C2BDFB741DC4176048F4.length - 1; i++)
-{
-    if (DD01E6A99300E8223E6C2BDFB741DC4176048F4[i] == 3)
-    {
-        if(DD01E6A99300E8223E6C2BDFB741DC4176048F4[i+2])
-        {
-            DD01E6A99300E8223E6C2BDFB741DC4176048F4 += E798E7470650C5BCCC6C4C2B2EAE0312BAD3E[i+2];
-            continue;
-        }
-        else
-        {
-            DD01E6A99300E8223E6C2BDFB741DC4176048F4 = DD01E6A99300E8223E6C2BDFB741DC4176048F4 [i-4];
-            continue;
-        }
-    }
-}
+// for(let i = 0; i < DD01E6A99300E8223E6C2BDFB741DC4176048F4.length - 1; i++)
+// {
+//     if (DD01E6A99300E8223E6C2BDFB741DC4176048F4[i] == 3)
+//     {
+//         if(DD01E6A99300E8223E6C2BDFB741DC4176048F4[i+2])
+//         {
+//             DD01E6A99300E8223E6C2BDFB741DC4176048F4 += E798E7470650C5BCCC6C4C2B2EAE0312BAD3E[i+2];
+//             continue;
+//         }
+//         else
+//         {
+//             DD01E6A99300E8223E6C2BDFB741DC4176048F4 = DD01E6A99300E8223E6C2BDFB741DC4176048F4 [i-4];
+//             continue;
+//         }
+//     }
+// }
 
 //функция формирования данных для отправки в БД
 function setFormData () {
@@ -175,4 +175,3 @@ buttonElem.addEventListener('click', (event)=> {
     
 })
 
-//<span>Введите код, отправленный Вам на указанную email-почту</span>

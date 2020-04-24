@@ -39,7 +39,7 @@ showIcons.forEach( (elem) => {
 })
 
 document.getElementById('button').addEventListener('click', () => {
-    let valueTel = document.forms['regForm']['telU'].value;
+    let valueTel = document.getElementById('telU').value;
     if(valueTel == ['/^0-9_/'] && valueTel != ""){
         console.log('123')
     }
