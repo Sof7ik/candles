@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 16 2020 г., 12:59
--- Версия сервера: 8.0.19
--- Версия PHP: 7.4.4
+-- Время создания: Апр 22 2020 г., 19:24
+-- Версия сервера: 10.3.22-MariaDB
+-- Версия PHP: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `candles` (
-  `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_id` int NOT NULL,
-  `form_id` int NOT NULL,
-  `color_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_id` int(11) NOT NULL,
+  `form_id` int(11) NOT NULL,
+  `color_id` int(11) NOT NULL,
   `cost` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -44,10 +44,10 @@ INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) V
 (1, 'Юзерная свеча 1', 1, 2, 2, 1000),
 (2, 'Юзерная свеча 1', 1, 2, 2, 1000),
 (3, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(4, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(4, 'Юзерная свеча 1', 2, 3, 1, 1000),
 (5, 'Юзерная свеча 1', 1, 2, 2, 1000),
 (6, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(7, 'Юзерная свеча 1', 1, 2, 2, 1000),
+(7, 'Юзерная свеча 1', 2, 1, 3, 1000),
 (8, 'Юзерная свеча 1', 1, 2, 2, 1000),
 (9, 'Юзерная свеча 1', 1, 2, 2, 1000),
 (10, 'Юзерная свеча 1', 1, 2, 2, 1000),
@@ -65,9 +65,9 @@ INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) V
 --
 
 CREATE TABLE `colors` (
-  `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hex` varchar(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hex` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -89,19 +89,20 @@ INSERT INTO `colors` (`id`, `name`, `hex`) VALUES
 --
 
 CREATE TABLE `forms` (
-  `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_rus` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `forms`
 --
 
-INSERT INTO `forms` (`id`, `name`, `image`) VALUES
-(1, 'Длинная', ''),
-(2, 'С закругленным низом', ''),
-(3, 'Прямоугольная', '');
+INSERT INTO `forms` (`id`, `name`, `name_rus`, `image`) VALUES
+(1, 'tall', 'Высокий', ''),
+(2, 'circle', 'С закруглённым низом', ''),
+(3, 'rectangle', 'Прямоугольный', '');
 
 -- --------------------------------------------------------
 
@@ -110,9 +111,9 @@ INSERT INTO `forms` (`id`, `name`, `image`) VALUES
 --
 
 CREATE TABLE `types` (
-  `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -130,25 +131,22 @@ INSERT INTO `types` (`id`, `name`, `image`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` varchar(12) NOT NULL,
-  `address` varchar(255) DEFAULT NULL
+  `phone` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`, `address`) VALUES
-(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789', 'Московская область, г. Мытищи, ул. Нововокзальная, д. 1'),
-(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789', 'Московская область, г. Пушкино, ул. Центральная, д. 16'),
-(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543', 'Московская область, г. Ивантеевка, ул. Задорожная, д. 3А'),
-(34, 'Андрей', 'Павлов', '$2y$10$pib3WfJ8t7mUHjCS1.AK8OZu/MD7BjOrXsMYcNbh1HNuiMhkOLdw6', 'byc@mail.ru', '89057661656', NULL),
-(35, 'Дима', 'Димов', '$2y$10$IN3QfLJegojhHvUzR9UnQeSCC187JHJafhyKIFWoWEsSnZChGMa.K', 'test@mail.ru', '89057661646', NULL);
+INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES
+(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
+(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
+(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543');
 
 --
 -- Индексы сохранённых таблиц
@@ -195,31 +193,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

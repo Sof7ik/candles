@@ -43,21 +43,20 @@ function getInfoCandle(method, url)
         method: method
     }).then((res) =>
     {
-        console.log(res.json());
-        // return res.json();
+        return res.json();
     })
-    // .then((res) => {
-    //     console.log(res);
-    //     document.querySelector('ul.infoAboutCandle').insertAdjacentHTML('afterbegin', `
-    //         <li>Type: <span>${res.type_name}</span></li>
-    //         <li>Form: <span>${res.form_name}</span></li>
-    //         <li>Color: <span>${res.color_name}</span></li>
-    //         <li>Price: <span></span></li>
-    //     `)
-    //     document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
-    //         e.style.display = 'flex';
-    //     })
-    // })
+    .then((res) => {
+        console.log(res);
+        document.querySelector('ul.infoAboutCandle').insertAdjacentHTML('afterbegin', `
+            <li>Type: <span>${res.typeName}</span></li>
+            <li>Form: <span>${res.formName}</span></li>
+            <li>Color: <span>${res.colorHex}</span></li>
+            <li>Price: <span>${res.price} руб.</span></li>
+        `)
+        document.querySelectorAll('ul.infoAboutCandle *').forEach((e) => {
+            e.style.display = 'flex';
+        })
+    })
     
 }
 

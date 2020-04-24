@@ -35,45 +35,45 @@
             <div class="main-up-content">
               <div class="main-up-content left">
                   <span>
-                    <a href="/view/catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
+                    <a href="catalog.php" class="topAndSale">СВЕЧИ ПО АКЦИИ</a>
                   </span>
                   <div class="candles">
-                      <div class="candles__candle sale" data-candlenumber = '1'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
-
-                      <div class="candles__candle sale" data-candlenumber = '2'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
-
-                      <div class="candles__candle sale" data-candlenumber = '3'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
-
-                      <div class="candles__candle sale" data-candlenumber = '4'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
+                      <?
+                      require 'controller/php/connection.php';
+                      $candles = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `sale` = 1;");
+                      if($candles)
+                      {
+                        $candles = mysqli_fetch_all($candles, MYSQLI_ASSOC);
+                        foreach ($candles as $key => $value) {
+                          ?>
+                          <div class="candles__candle sale" data-candlenumber = '<?=$value['id'];?>'>
+                            <a href="#" class="candle__src"></a>  
+                          </div>
+                          <?
+                        }
+                      }
+                      ?>
                   </div>
               </div>
 
               <div class="main-up-content right">
-                  <span><a href="/view/catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></span>
+                  <span><a href="catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></span>
                   <div class="candles">
-                      <div class="candles__candle top" data-candlenumber = '5'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
+                    <?
+                      $candles1 = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `top` = 1;");
+                      if($candles1)
+                      {
+                        $candles1 = mysqli_fetch_all($candles1, MYSQLI_ASSOC);
+                        foreach ($candles1 as $key1 => $value1) {
+                          ?>
+                          <div class="candles__candle sale" data-candlenumber = '<?=$value1['id'];?>'>
+                            <a href="#" class="candle__src"></a>  
+                          </div>
+                          <?
+                        }
+                      }
+                    ?>
 
-                      <div class="candles__candle top" data-candlenumber = '6'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
-
-                      <div class="candles__candle top" data-candlenumber = '7'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
-
-                      <div class="candles__candle top" data-candlenumber = '8'>
-                        <a href="#" class="candle__src"></a>  
-                      </div>
                   </div>
               </div>
             </div>

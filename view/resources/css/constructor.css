@@ -51,20 +51,22 @@ canvas
 {
     z-index: 3;
     position: absolute;
+    /* display: none; */
 }
 
 #constructor-canvas-2
 {
     z-index: 4;
     position: absolute;
+    display: none;
 }
 
 #constructor-canvas-3
 {
     z-index: 5;
     position: absolute;
+    display: none;
 } 
-
 
 div.image
 {
@@ -76,9 +78,9 @@ div.image
     /* left: 0px;
     top: 0px; */
 
-    /* background-image: url('/view/resources/img/pics/1.png'); */
+    background-image: url('/view/resources/img/pics/1.png');
     /* background-image: url('/view/resources/img/pics/4.png'); */
-    background-image: url('/view/resources/img/pics/5.png');
+    /* background-image: url('/view/resources/img/pics/5.png'); */
     background-size: contain;
 
     border-radius: 5rem;

@@ -5,7 +5,7 @@
             <ul class='infoAboutCandle'></ul>
             <div class='buttonsLeftModal'>
                 <input type='submit' name='buyCandleLM' value='КУПИТЬ' class='buyCandleLM'>
-                <input type='submit' name='basketLM' value='В КОРЗИНУ' class='basketLM'>
+                <!-- <input type='submit' name='basketLM' value='В КОРЗИНУ' class='basketLM'> -->
             </div>
         </form>
         <p class='closeLeftModal'>ЗАКРЫТЬ</p>

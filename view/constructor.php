@@ -7,7 +7,7 @@
 
             <div class="image-and-buttons">
                 <div class="canvas-wrapper">
-                    <!-- <canvas id="constructor-canvas-1" width="250px" height="250px"></canvas> -->
+                    <canvas id="constructor-canvas-1" width="250px" height="250px"></canvas>
                     <canvas id="constructor-canvas-2" width="250px" height="250px"></canvas>
                     <canvas id="constructor-canvas-3" width="250px" height="250px"></canvas>
                     <div class="image"></div>
@@ -16,7 +16,7 @@
 
                 <div class="buttons">
                     <input type="submit" name="submit-btn" value="КУПИТЬ" class="buy-button">
-                    <button class="buy-button">В КОРЗИНУ</button>
+                    <!-- <button class="buy-button">В КОРЗИНУ</button> -->
                 </div>
             </div>
 

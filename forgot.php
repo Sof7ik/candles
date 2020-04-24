@@ -10,9 +10,20 @@
     <link rel="stylesheet" href="view/resources/css/style.css">
     <link rel="stylesheet" href="view/resources/css/header.css">
     <link rel="stylesheet" href="view/resources/css/loginModalWindow.css">
+    <link rel="stylesheet" href="view/resources/css/index.css">
 </head>
 <body>
-    <?include __DIR__ . '/view/header.php'?>
-    <p>не готово, но скоро-скоро</p>
+    <div class="wrapper">
+        <?include __DIR__ . '/view/header.php'?>
+        <main>
+            <div class="container">
+                <div class="main-wrapper">
+                    <p style="margin-top:100px; color: red; background-color:black; font-size:170pt;">А НЕ НАДО БЫЛО ЗАБЫВАТЬ!</p>
+                </div>
+            </div>
+            
+    </main>
+    </div>
+    
 </body>
 </html>

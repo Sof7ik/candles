@@ -6,11 +6,12 @@
     "SELECT 
     `candles`.`name` AS `candleName`,
     `candles`.`id` AS `candleId`,
+    `candles`.`cost` AS `price`,
     `types`.`name` AS `typeName`,
     `forms`.`name_rus` AS `formName`,
     `colors`.`hex` AS `colorHex`
 
-     FROM 
+    FROM 
 
     `candles`, `types`, `forms`, `colors`
     

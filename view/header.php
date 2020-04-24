@@ -6,7 +6,7 @@
 
         <a href="../catalog.php" class="nav-items">КАТАЛОГ </a>
 
-        <a href="../userPage.php" class="nav-items">СТРАНИЦА</a>
+        <!-- <a href="../userPage.php" class="nav-items">СТРАНИЦА</a> -->
 
         <div class="login-window">
 
@@ -35,7 +35,7 @@
                         ?>
                             <ul class="login-modal-authtorized">
                                 <li><a href="../userPage.php">Профиль</a></li>
-                                <li><a href="../cart.php">Корзина</a></li>
+                                <!-- <li><a href="../cart.php">Корзина</a></li> -->
                                 <li><a href="../orders.php">Заказы</a></li>
                                 <li><a href="/controller/php/logout.php">Выйти</a></li>
                             </ul>
