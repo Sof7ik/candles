@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 22 2020 г., 19:24
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.1.33
+-- Время создания: Апр 24 2020 г., 18:52
+-- Версия сервера: 8.0.19
+-- Версия PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,35 +28,37 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `candles` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `form_id` int(11) NOT NULL,
-  `color_id` int(11) NOT NULL,
-  `cost` float NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type_id` int NOT NULL,
+  `form_id` int NOT NULL,
+  `color_id` int NOT NULL,
+  `cost` float NOT NULL,
+  `sale` tinyint(1) NOT NULL,
+  `top` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `candles`
 --
 
-INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) VALUES
-(1, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(2, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(3, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(4, 'Юзерная свеча 1', 2, 3, 1, 1000),
-(5, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(6, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(7, 'Юзерная свеча 1', 2, 1, 3, 1000),
-(8, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(9, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(10, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(11, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(12, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(13, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(14, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(15, 'Юзерная свеча 1', 1, 2, 2, 1000),
-(18, 'Юзерная свеча 1', 1, 3, 8, 1000);
+INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`, `sale`, `top`) VALUES
+(1, 'Юзерная свеча 1', 2, 1, 9, 15000, 1, 0),
+(2, 'Юзерная свеча 1', 2, 2, 9, 1500, 0, 0),
+(3, 'Юзерная свеча 1', 2, 3, 9, 2000, 0, 0),
+(4, 'Юзерная свеча 1', 1, 1, 3, 2000, 0, 1),
+(6, 'Юзерная свеча 1', 1, 1, 12, 2000, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `cart`
+--
+
+CREATE TABLE `cart` (
+  `id_user` int NOT NULL,
+  `id_candle` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -65,9 +67,9 @@ INSERT INTO `candles` (`id`, `name`, `type_id`, `form_id`, `color_id`, `cost`) V
 --
 
 CREATE TABLE `colors` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hex` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hex` varchar(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -80,7 +82,10 @@ INSERT INTO `colors` (`id`, `name`, `hex`) VALUES
 (3, 'Синий', '#0044ff'),
 (4, '', '#0ff06f'),
 (5, '', '#b89e47'),
-(8, '', '#11eea6');
+(8, '', '#11eea6'),
+(9, '', '#31ce9f'),
+(11, '', '#9c6363'),
+(12, '', '#140ff0');
 
 -- --------------------------------------------------------
 
@@ -89,20 +94,64 @@ INSERT INTO `colors` (`id`, `name`, `hex`) VALUES
 --
 
 CREATE TABLE `forms` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name_rus` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_rus` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `forms`
 --
 
-INSERT INTO `forms` (`id`, `name`, `name_rus`, `image`) VALUES
-(1, 'tall', 'Высокий', ''),
-(2, 'circle', 'С закруглённым низом', ''),
-(3, 'rectangle', 'Прямоугольный', '');
+INSERT INTO `forms` (`id`, `name`, `image`, `name_rus`) VALUES
+(1, 'tall', '', 'Длинная'),
+(2, 'circle', '', 'С круглым низом'),
+(3, 'rectangle', '', 'Квадратная');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `date`) VALUES
+(7, 46, '2020-04-22 23:24:14'),
+(8, 46, '2020-04-22 23:24:35'),
+(9, 46, '2020-04-24 03:14:52'),
+(10, 46, '2020-04-24 03:15:20'),
+(11, 47, '2020-04-24 03:18:08');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `order_candle`
+--
+
+CREATE TABLE `order_candle` (
+  `order_id` int NOT NULL,
+  `candle_id` int NOT NULL,
+  `quantity` int NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `order_candle`
+--
+
+INSERT INTO `order_candle` (`order_id`, `candle_id`, `quantity`) VALUES
+(7, 1, 1),
+(8, 3, 1),
+(9, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -111,9 +160,9 @@ INSERT INTO `forms` (`id`, `name`, `name_rus`, `image`) VALUES
 --
 
 CREATE TABLE `types` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -131,22 +180,22 @@ INSERT INTO `types` (`id`, `name`, `image`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` varchar(12) NOT NULL
+  `phone` varchar(12) NOT NULL,
+  `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`) VALUES
-(1, 'userName1', 'userSurname1', 'userPassword1', 'userEmail1', '123456789'),
-(2, 'userName2', 'userSurname2', 'userPassword2', 'userEmail2', '123456789'),
-(8, 'Леонид', 'Бычков', '123123', 'alekse-bychkov@mail.ru', '90543543543');
+INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `phone`, `address`) VALUES
+(46, 'Антон', 'Овчинников', '$2y$10$YUVI7OS6FR.zOEmiZqyfwOGZR8PcLOj.3/eJIrJdGgIlainpRPqF6', 'antonOvc@mail.ru', '89057890865', NULL),
+(47, 'sosi', 'sosi', '$2y$10$AJkroPTwSy7HXtk3w1HV/OLkPGmawq5SJNPXEiNqr1DcUKp4d4O2.', '111@111', '111', NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -162,6 +211,13 @@ ALTER TABLE `candles`
   ADD KEY `form_id` (`form_id`);
 
 --
+-- Индексы таблицы `cart`
+--
+ALTER TABLE `cart`
+  ADD KEY `id_candle` (`id_candle`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Индексы таблицы `colors`
 --
 ALTER TABLE `colors`
@@ -172,6 +228,20 @@ ALTER TABLE `colors`
 --
 ALTER TABLE `forms`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Индексы таблицы `order_candle`
+--
+ALTER TABLE `order_candle`
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `candle_id` (`candle_id`);
 
 --
 -- Индексы таблицы `types`
@@ -193,31 +263,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `candles`
 --
 ALTER TABLE `candles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -230,6 +306,26 @@ ALTER TABLE `candles`
   ADD CONSTRAINT `candles_ibfk_1` FOREIGN KEY (`color_id`) REFERENCES `colors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `candles_ibfk_2` FOREIGN KEY (`form_id`) REFERENCES `forms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `candles_ibfk_3` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_candle`) REFERENCES `candles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `order_candle`
+--
+ALTER TABLE `order_candle`
+  ADD CONSTRAINT `order_candle_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_candle_ibfk_2` FOREIGN KEY (`candle_id`) REFERENCES `candles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
