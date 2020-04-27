@@ -43,10 +43,11 @@
             else
             {
                 echo "Пароли в базе и тут не совпадают";
+                
             }
         }
         else {
-            die(mysqli_error($query));
+            die(mysqli_error($link));
         }
     }
 ?>
