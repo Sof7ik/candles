@@ -55,9 +55,9 @@ document.getElementById('emailU').addEventListener('input', (e) => {
     e.target.value = e.target.value.replace(a, '').trim();
 })
 
-document.querySelectorAll('input[type="text"]').forEach((elem) => {
-    elem.addEventListener('input', (e) => {
-        let a = /[0-9№_/\//$&+,:;=?@#|"{}\]\['<>.^*()%!-]/;
-        e.target.value = e.target.value.replace(a, '').trim();
-    })
-})
+// document.querySelectorAll('input[type="text"]').forEach((elem) => {
+//     elem.addEventListener('input', (e) => {
+//         let a = /[0-9№_/\//$&+,:;=?@#|"{}\]\['<>.^*()%!-]/;
+//         e.target.value = e.target.value.replace(a, '').trim();
+//     })
+// })

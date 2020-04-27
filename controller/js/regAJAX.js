@@ -1,4 +1,4 @@
-document.querySelectorAll('form input').forEach(elem => elem.setAttribute('autocomplete', "off"))
+// document.querySelectorAll('form input').forEach(elem => elem.setAttribute('autocomplete', "off"))
 
 const 
 nameElem = document.getElementById('nameU'), 
@@ -12,12 +12,9 @@ const data = new FormData();
 
 // let DD01E6A99300E8223E6C2BDFB741DC4176048F4;
 
-
-
 // DD01E6A99300E8223E6C2BDFB741DC4176048F4 = Math.round(Math.random() * 12312312313213);
 
 // DD01E6A99300E8223E6C2BDFB741DC4176048F4 = DD01E6A99300E8223E6C2BDFB741DC4176048F4.toString();
-
 
 function generateNumber() {
     return rand = Math.round(Math.random() * (9999 - 1000) + 1000);
@@ -43,7 +40,7 @@ function checkUser (method, url, data)
     {
         // console.log(res);
         if (res == "1"){
-            alert("Пользователь с таким  адресом электронной почты уже существует. Пожалуста, укажите другой E-mail.");
+            alert("Пользователь с таким  адресом электронной почты уже существует. Пожалуйста, укажите другой E-mail.");
         }
         else if (res == "0")
         {
@@ -137,13 +134,14 @@ function insertNewUser (method, url, data)
     })
     .then((res) =>
     {
-        console.log(res);
+        // console.log(res);
         if (res == "Пароли не свопадают"){
             alert("Пароли не совпадают", data['password'], data['repeatPassword']);
         }
         else
         {
             alert("Добавлено");
+            window.location.href = '../../index.php';
         }
     });
 }
