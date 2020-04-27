@@ -20,10 +20,6 @@ canvas1.quadraticCurveTo(120, 213, 90, 203);
 canvas1.quadraticCurveTo(84, 200, 80, 195);
 canvas1.quadraticCurveTo(75, 195, 56, 128);
 
-// canvas1.fillStyle = 'red'; 
-// canvas1.fill();
-
-
 //длинная
 const canvas2 = canvas2Elem.getContext('2d');
 
@@ -35,9 +31,7 @@ canvas2.quadraticCurveTo(165, 150, 171, 195);
 
 // canvas2.quadraticCurveTo(123, 245, 74, 195);
 canvas2.quadraticCurveTo(123, 245, 75, 195);
-
 canvas2.quadraticCurveTo(85, 125, 73, 77);
-
 
 //квадратная
 const canvas3 = canvas3Elem.getContext('2d');
