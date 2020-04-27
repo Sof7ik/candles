@@ -66,7 +66,7 @@
                         $candles1 = mysqli_fetch_all($candles1, MYSQLI_ASSOC);
                         foreach ($candles1 as $key1 => $value1) {
                           ?>
-                          <div class="candles__candle sale" data-candlenumber = '<?=$value1['id'];?>'>
+                          <div class="candles__candle top" data-candlenumber = '<?=$value1['id'];?>'>
                             <a href="#" class="candle__src"></a>  
                           </div>
                           <?

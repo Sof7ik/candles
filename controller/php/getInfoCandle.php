@@ -35,30 +35,4 @@
     }
     else {die(mysqli_error($link));}
 
-
-
-
-
-
-//   $idType = $getInfoCandleResult['type_id'];
-//     $idForm = $getInfoCandleResult['form_id'];
-//     $idColor = $getInfoCandleResult['color_id'];
-
-//     $getAllInfoCandle = mysqli_query($link,
-//     "SELECT `types`.`name` AS 'type_name',
-//     `forms`.`name_rus` AS 'form_name',
-//     `colors`.`hex` AS 'color_name'
-// FROM `types`,
-//   `forms`,
-//   `colors`,
-//   `candles`
-// WHERE 
-//      `candles`.`color_id` = `colors`.`id` AND
-//     `candles`.`form_id` = `forms`.`id` AND
-//     `candles`.`type_id` = `types`.`id` AND
-//       `types`.`id` = $idType AND 
-//       `forms`.`id` = $idForm AND
-//       `colors`.`id` = $idColor
-//     ");
-    
 ?>

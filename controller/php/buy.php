@@ -58,7 +58,7 @@
                 }
             }
         }
-        //если выбран цвет из уже доступных в базе, а не польщовательский, то мы суем в color его id
+        //если выбран цвет из уже доступных в базе, а не пользовательский, то мы суем в color его id
         else
         {
             $color = $_POST['color__vars'];
@@ -164,7 +164,7 @@
             }
             else 
             {
-                die("Ошибкка: " . mysqli_error($link) . 'строка 164');
+                die("Ошибка: " . mysqli_error($link) . 'строка 164');
             }
 
             if ($newOrder)
@@ -180,16 +180,19 @@
                 (`order_id`, `candle_id`, `quantity`) VALUES 
                 ($lastOrderId,$lastCandleId,$quantity)");
 
-                header('Location: ../../index.php');
-
                 if (!$last)
                 {
-                    die("Ошибкка: " . mysqli_error($link) . 'строка 184'); 
+                    die("Ошибка: " . mysqli_error($link) . 'строка 184'); 
                 }
+                else
+                {
+                    header('Location: ../../index.php');
+                }
+                
             }
             else
             {
-                die("Ошибкка: " . mysqli_error($link) . 'строка 189'); 
+                die("Ошибка: " . mysqli_error($link) . 'строка 189'); 
             }
         }
         else
