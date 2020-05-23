@@ -40,7 +40,7 @@
                   <div class="candles">
                       <?
                       require 'controller/php/connection.php';
-                      $candles = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `sale` = 1;");
+                      $candles = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `sale` = 1 LIMIT 4; ");
                       if($candles)
                       {
                         $candles = mysqli_fetch_all($candles, MYSQLI_ASSOC);
@@ -60,7 +60,7 @@
                   <span><a href="catalog.php" class="topAndSale">ТОП СВЕЧКИ</a></span>
                   <div class="candles">
                     <?
-                      $candles1 = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `top` = 1;");
+                      $candles1 = mysqli_query($link, "SELECT `id` FROM `candles` WHERE `top` = 1  LIMIT 4;");
                       if($candles1)
                       {
                         $candles1 = mysqli_fetch_all($candles1, MYSQLI_ASSOC);
