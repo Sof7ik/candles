@@ -1,8 +1,6 @@
 <?php
     require_once 'connection.php';
 
-        
-
     $userId = unserialize($_COOKIE['userInfo'])['id'];
 
     $getAllUserSOrders = mysqli_query($link, "SELECT * FROM `orders` WHERE `orders`.`user_id` = $userId;");
@@ -32,6 +30,7 @@
                     `colors`.`hex` AS 'candle_color',
                     `orders`.`order_id` AS 'order_id',
                     `order_candle`.`quantity` AS `candle_quantity`,
+                    -- `users`.`id` AS 'user_id',
                     `orders`.`date` AS 'order_date'
                 FROM
                     `candles`,
@@ -78,10 +77,10 @@
                                             <img src="/view/resources/img/pics/1.png" alt="candle" class="order-candle">
 
                                             <div class="texts">
-                                                <p><?= $value['candle_name']; ?></p>
+                                                <p><?php echo $value['candle_name']; ?></p>
                                                 <span>
-                                                    <?= 
-                                                    $value['candle_type'] . ' + ' . 
+                                                    <? 
+                                                    echo $value['candle_type'] . ' + ' . 
                                                     $value['candle_form'] . ' + ' . 
                                                     $value['candle_color']; 
                                                     ?>
@@ -91,16 +90,12 @@
                                         </div>
 
                                         <span class="item-price">
-                                            <?= $value['candle_quantity'];?> x <?= $value['candle_price']; ?> руб. 
-                                            = <?= intval($value['candle_quantity']) * intval($value['candle_price']) . " руб."; ?>
+                                            <?echo $value['candle_quantity'];?> x <?echo $value['candle_price']; ?> руб. 
+                                            = <? echo intval($value['candle_quantity']) * intval($value['candle_price']) . " руб."; ?>
                                         </span>
                                         
                                     </div>
                                 <?
-                            }
-                            else 
-                            {
-                                die();
                             }
                         }
                     }

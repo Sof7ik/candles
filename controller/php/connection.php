@@ -1,8 +1,8 @@
 <?php
     $host = 'localhost';
-    $user = 'root';
+    $user = 'f0406051_candles';
     $password = 'root';
-    $db = 'candles';
+    $db = 'f0406051_candles';
     $link = mysqli_connect($host, $user, $password, $db);
 
     if(!$link)
